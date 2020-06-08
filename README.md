@@ -1,2 +1,2 @@
-# ISEN3-travel
+# ISEN3-mixy
 An Student Project
