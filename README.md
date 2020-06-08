@@ -1,2 +1,2 @@
-# ISEN3-mixy
+# isen3-mixy
 An Student Project
