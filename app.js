@@ -4,6 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// load env vars
+
+dotenv.config({path: './config/config.env'}) ;  // Ne pas oublier de charger notre fichier .env qui ne passe pas sur GitHub !!
+
+//Connexion à la database
+
+connectDB() ;
+
+const PORT = process.env.PORT || 8080 ;
+
+app.listen(PORT, () => 
+console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+);
+
 // router setup
 var indexRouter = require('./routes/index');
 
