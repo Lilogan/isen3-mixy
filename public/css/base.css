@@ -7,27 +7,29 @@ body {
 }
 
 .card {
-    display: flex;
+    display: grid;
     flex-direction: column;
-
-    color: #fff;
-    font-size: 15px;
-    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-
-    height: 100%;
-    width: 100%;
-
-    border:2px solid white;
-    border-radius: 4px;
+    border-radius: 30px;
+    overflow: hidden;
 
     transition: all 500ms;
+ }
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+ .taille1{
+    height: 200px;
+    width: 200px;
+ }
+ .taille2{
+    height: 150px;
+    width: 450px;
  }
   
-.card:hover {
-    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+.taille3{
+    height: 400px;
+    width: 300px;
+}
+
+
+/*.card:hover {
     transform: translateY(-3px) scale(1.1);
- }
+ }*/

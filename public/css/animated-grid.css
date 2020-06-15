@@ -1,19 +1,18 @@
 .animated-grid {
-  height: 85vh;
-  margin-bottom: 200px;
-
+  position: absolute;
   display: grid;
-  gap: 1rem;
+  gap: 10px;
 
  /* Explicit grid */
   grid-template-areas:
-    'a  b  c  d'
-    'l  X X   e'
-    'k  X X   f'
-    'j  i  h  g';
+    'X d a h'
+    'b i j l'
+    'f e k c'
+    'g z z z';
 
 
-  grid-template-columns: 240px auto auto 240px;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
   --stagger-delay: 100ms;
 }
@@ -31,20 +30,160 @@
   }
 }
 
-.card {
- 
-  animation: cardEntrance 700ms ease-out;
-  animation-fill-mode: backwards;
-
-}
 
 .meteo {
+  background-image: url("https://www.coeurdebastides.com/img/meteo/hd/partly-cloudy.png");
+  background-color: whitesmoke;
+  background-size: cover;
+  color:black;
+
+  height: 200px;
+  width: 200px;
+}
+.meteo h1 {
+  margin: inherit;
+  padding-left:130px;
+  padding-top: 5px;
+}
+.meteo p{
+  position: relative;
+  margin: inherit;
+  left: 145px;
+  bottom: 72px;
+}
+
+.info {
+  background: linear-gradient(70deg,black,white);
+}
+.info h1 {
+  text-align: center;
+  margin: inherit;
+  position: relative;
+  top: 10px;
+}
+
+.vol{
+  background-image: url("https://www.belambra.fr/les-echappees/wp-inside/uploads/2013/01/comment-bien-voyager-en-avion-suivez-nos-conseils-pour-un-vol-agreable.jpg");
+  background-size: cover;
+  margin: inherit;
+}
+
+.vol h1{
+  font-size: xx-large;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.vol h2{
+  text-align: center;
+  position: relative;
+  bottom: 50px;
+}
+.vol p{
+  text-align: center;
+  position: relative;
+  bottom: 80px;
+}
+
+
+.activite {
+  background-color: white;
+  color: black;
+}
+
+.activite h1{
+  font-size: large;
+  text-align: center;
+}
+
+.concert {
+  background-image:url("https://c.pxhere.com/photos/7a/e0/audience_band_concert_crowd_dancing_festival_lights_live-1563105.jpg!d");
+  background-size: 300px;
+  background-position: center;
+  color: white;
+  padding-left: 20px;
+  border-radius: 5px;
+}
+
+.spectacle {
+  background-image:url("https://www.u-pec.fr/medias/photo/theatre-visuel-k-sup_1548938310046-jpg");
+  background-size: 300px 200px;
+  background-position: bottom -30px center;
+  color: white;
+  padding-left: 20px;
+  border-radius: 5px;
+}
+
+.accrobranche {
+  background-image:url("https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/01/31/node_127887/11544385/public/2020/01/31/B9722427892Z.1_20200131162752_000%2BGKDFE27QP.1-0.jpg?itok=dG7Qrio71580484478");
+  background-size: 300px;
+  background-position: bottom -70px center;
+  color: white;
+  padding-left: 20px;
+  border-radius: 5px;
+}
+
+.golf{
+  background-image: url("https://www.sport.fr/wp-content/uploads/2020/01/golf-generik-759x300.jpg"); 
+  background-size: 300px;
+  background-position: bottom;
+  color: white;
+  padding-left: 20px;
+  border-radius: 5px;
+}
+
+.hotel {
+  background-image : url("https://www.leparisien.fr/resizer/IGDTYf0fH1rq5UGvCsoR_0ADKyw=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/X6JFKYWT7UKRJNVUKS5LNICV74.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  justify-content: center;
   align-items: center;
 }
-img {
-    width: 50px;
-    height: 50px;
+
+.hotel h1{
+  font-size: xx-large;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 10px;
 }
+
+.hotel h2{
+  text-align: center;
+  position: relative;
+  bottom: 50px;
+}
+.hotel p{
+  text-align: center;
+  position: relative;
+  bottom: 80px;
+}
+
+.resto {
+  background-image: url('https://designmag.fr/wp-content/uploads/2018/09/restaurant-en-pleine-nature-bangkok-plafond-sombre-lumiere-led-comme-lucioles.jpg%27');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  justify-content: center;
+  align-items: center;  
+}
+
+.resto h1{
+  font-size: xx-large;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.resto p{
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+}
+
 
 .card:nth-child(1) {
   animation-delay: calc(1 * var(--stagger-delay));
@@ -79,18 +218,7 @@ img {
   grid-area: i;
   animation-delay: calc(9 * var(--stagger-delay));
 }
-.card:nth-child(10) {
-  grid-area: j;
-  animation-delay: calc(10 * var(--stagger-delay));
-}
-.card:nth-child(11) {
-  grid-area: k;
-  animation-delay: calc(11 * var(--stagger-delay));
-}
-.card:nth-child(12) {
-  grid-area: l;
-  animation-delay: calc(12 * var(--stagger-delay));
-}
+
 .card:last-child {
   grid-area: X;
   animation-delay: calc(13 * var(--stagger-delay));

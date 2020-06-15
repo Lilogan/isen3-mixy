@@ -2,22 +2,53 @@ extends layout
 
 block head
   link(rel="stylesheet", href="./css/animated-grid.css")
-
+  link(rel="stylesheet", href="./css/base.css")
+  
 block content
-  h1 Team Mixy
+  h1 TEAM MIXY
   section.animated-grid
-    div.card.meteo
-      h1 Météo
-        p La météo de est de 20°C
-        img(src="./img_meteo/soleil.png", alt="Soleil")
-    div.card.restaurant
-    div.card c
-    div.card d
-    div.card e
-    div.card f
-    div.card g
-    div.card h
-    div.card i
-    div.card j
-    div.card k
-    div.card l
+    script(src="./js/meteo.js")
+
+    div.card.meteo.taille1.clicable
+      h1 Lille
+      p 20°C
+      
+
+    div.card.info.taille1.clicable
+      h1 Ne pas oublier :
+      div.check
+        div.visa
+          input(type="checkbox" id="visa" name="visa")
+          label(for="visa") Visa
+
+        div.monnaie
+          input(type="checkbox" id="monnaie" name="monnaie")
+          label(for="monnaie") Monnaie locale
+
+    div.card.vol.taille2.clicable
+      h1 Vol 
+      h2 Prix moyen : 200€
+      p Il y a 4 vols corresponsand à la destination
+      
+    div.card.activite.taille3.clicable
+      h1 Activitées disponibles sur place 
+      .concert
+        h2 Concerts
+      .spectacle
+        h2 Spectacles
+      .accrobranche
+        h2 Accrobranche
+      .golf
+        h2 Golf
+
+    .card.resto.taille2
+      h1 Les restaurants
+      p Il y a 10 restaurants disponibles
+
+    .card.hotel.taille2.clicable
+      h1 Les hôtels
+      h2 Le prix moyen : 150€
+      p Il y a 25 hotels disponibles
+      
+
+
