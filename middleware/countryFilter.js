@@ -1,5 +1,6 @@
 const Country = require('../models/Country');
 
+// Middleware for filter compatible country
 module.exports = async (req, res, next) => {
   try {
     var query = 'weather.' + req.query.month + '.note';

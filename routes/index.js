@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const filter = require('../middleware/countryFilter');
-const axios = require('axios');
-const { route } = require('../app');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {

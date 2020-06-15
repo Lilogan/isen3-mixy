@@ -5232,10 +5232,11 @@ const countries = [
   },
 ];
 
-
-
+// Function for initate the database
 module.exports = async () => {
-  await Country.insertMany(countries).catch((error) => {
-    console.error(error);
-  }).then(console.log("Database Imported"));
+  await Country.insertMany(countries)
+    .catch((error) => {
+      console.error(error);
+    })
+    .then(console.log('Database Imported'));
 };

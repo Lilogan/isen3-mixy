@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Function for initiate the connection to the MongoDB server
 const InitiateMongoServer = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URL, {

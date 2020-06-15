@@ -12,7 +12,7 @@ dotenv.config();
 const InitiateMongoServer = require('./config/db');
 InitiateMongoServer();
 
-// Schedule task
+// Schedule jobs
 const startJobs = require('./config/jobs');
 //startJobs();
 

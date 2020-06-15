@@ -2,6 +2,8 @@ const axios = require('axios');
 const CronJob = require('cron').CronJob;
 const Country = require('../models/Country');
 
+
+// Function for updating rates of currency in the database
 async function updateRate() {
   try {
     axios
@@ -27,6 +29,7 @@ async function updateRate() {
   }
 }
 
+// Function for updating daily cost of each country in the database
 async function updateCost() {
   const countries = await Country.find();
   const delayIncrement = 200;
@@ -69,6 +72,7 @@ async function updateCost() {
     .then(console.log('Cron : Updating daily cost...'));
 }
 
+// Function for run Jobs (periodically run function)
 const jobs = () => {
   const job1 = new CronJob('00 00 00 * * *', updateRate());
   const job2 = new CronJob('00 01 00 * * *', updateCost());
