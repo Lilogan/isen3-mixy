@@ -9,8 +9,9 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/hotels', async function (req, res) {
-  const list = await getHotelsList(293919, 1, '2020-06-16', 2);
-  res.json(list);
+  const name = req.query.country;
+  getHotelsList(name);
+  res.send("Test");
 });
 
 module.exports = router;
