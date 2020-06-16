@@ -5,9 +5,8 @@
   display: grid;
   gap: 1rem;
 
-  grid-template-columns: repeat(6,1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
-
 
   --stagger-delay: 100ms;
 }
@@ -25,32 +24,30 @@
   }
 }
 
-
 .meteo {
-  background-image: url("https://www.coeurdebastides.com/img/meteo/hd/partly-cloudy.png");
+  background-image: url('https://www.coeurdebastides.com/img/meteo/hd/partly-cloudy.png');
   background-color: whitesmoke;
   background-size: cover;
-  color:black;
+  color: black;
 
-  grid-column-start: 5; 
+  grid-column-start: 5;
   grid-column-end: 6;
-  grid-row-start: 1; 
-  grid-row-end: 1; 
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
 .meteo h1 {
   margin: inherit;
-  padding-left:130px;
+  padding-left: 130px;
   padding-top: 5px;
 }
-.meteo p{
+.meteo p {
   margin: inherit;
   padding-left: 140px;
 }
 
 .info {
-  
-  background-image: url("https://www.jobboom.com/carriere/wp-content/uploads/2014/08/checklist.jpg");
+  background-image: url('https://www.jobboom.com/carriere/wp-content/uploads/2014/08/checklist.jpg');
   background-color: white;
 
   background-size: cover;
@@ -58,10 +55,10 @@
   background-position: left 65px bottom -40px;
 
   color: black;
-  
-  grid-column-start: 6; 
-  grid-column-end: 7; 
-  grid-row-start: 1; 
+
+  grid-column-start: 6;
+  grid-column-end: 7;
+  grid-row-start: 1;
   grid-row-end: 1;
 }
 
@@ -72,51 +69,50 @@
   padding-bottom: 20px;
 }
 
-.vol{
-  background-image: url("https://www.belambra.fr/les-echappees/wp-inside/uploads/2013/01/comment-bien-voyager-en-avion-suivez-nos-conseils-pour-un-vol-agreable.jpg");
+.vol {
+  background-image: url('https://www.belambra.fr/les-echappees/wp-inside/uploads/2013/01/comment-bien-voyager-en-avion-suivez-nos-conseils-pour-un-vol-agreable.jpg');
   background-size: cover;
 
-  grid-column-start: 1; 
-  grid-column-end: 3; 
-  grid-row-start: 1; 
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
   grid-row-end: 1;
 }
 
-.vol h1{
+.vol h1 {
   font-size: xx-large;
   text-align: center;
   padding-top: 10px;
   padding-left: 10px;
 }
 
-.vol h2{
+.vol h2 {
   text-align: center;
   bottom: 50px;
 }
-.vol p{
+.vol p {
   text-align: center;
   position: relative;
   bottom: 80px;
 }
 
-
 .activite {
   background-color: white;
   color: black;
 
-  grid-column-start: 5; 
-  grid-column-end: 7; 
-  grid-row-start: 2; 
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 2;
   grid-row-end: 4;
 }
 
-.activite h1{
+.activite h1 {
   font-size: large;
   text-align: center;
 }
 
 .concert {
-  background-image:url("https://c.pxhere.com/photos/7a/e0/audience_band_concert_crowd_dancing_festival_lights_live-1563105.jpg!d");
+  background-image: url('https://c.pxhere.com/photos/7a/e0/audience_band_concert_crowd_dancing_festival_lights_live-1563105.jpg!d');
   background-size: cover;
   background-position: bottom -350px center;
   color: white;
@@ -125,7 +121,7 @@
 }
 
 .spectacle {
-  background-image:url("https://www.u-pec.fr/medias/photo/theatre-visuel-k-sup_1548938310046-jpg");
+  background-image: url('https://www.u-pec.fr/medias/photo/theatre-visuel-k-sup_1548938310046-jpg');
   background-size: cover;
   background-position: bottom -50px center;
   color: white;
@@ -134,7 +130,7 @@
 }
 
 .accrobranche {
-  background-image:url("https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/01/31/node_127887/11544385/public/2020/01/31/B9722427892Z.1_20200131162752_000%2BGKDFE27QP.1-0.jpg?itok=dG7Qrio71580484478");
+  background-image: url('https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/01/31/node_127887/11544385/public/2020/01/31/B9722427892Z.1_20200131162752_000%2BGKDFE27QP.1-0.jpg?itok=dG7Qrio71580484478');
   background-size: cover;
   background-position: bottom -105px center;
   color: white;
@@ -142,8 +138,8 @@
   border-radius: 5px;
 }
 
-.golf{
-  background-image: url("https://www.sport.fr/wp-content/uploads/2020/01/golf-generik-759x300.jpg"); 
+.golf {
+  background-image: url('https://www.sport.fr/wp-content/uploads/2020/01/golf-generik-759x300.jpg');
   background-size: cover;
   background-position: bottom -10px center;
   color: white;
@@ -152,31 +148,32 @@
 }
 
 .hotel {
-  background-image : url("https://www.leparisien.fr/resizer/IGDTYf0fH1rq5UGvCsoR_0ADKyw=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/X6JFKYWT7UKRJNVUKS5LNICV74.jpg");
+  background-image: url('https://www.leparisien.fr/resizer/IGDTYf0fH1rq5UGvCsoR_0ADKyw=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/X6JFKYWT7UKRJNVUKS5LNICV74.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+  opacity: 0.5;
+
   align-items: center;
 
-  grid-column-start: 3; 
-  grid-column-end: 5; 
-  grid-row-start: 1; 
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
   grid-row-end: 1;
 }
 
-.hotel h1{
+.hotel h1 {
   font-size: xx-large;
   text-align: center;
-  
+
   padding-top: 20px;
   padding-left: 10px;
 }
 
-.hotel h2{
+.hotel h2 {
   text-align: center;
 }
-.hotel p{
+.hotel p {
   text-align: center;
 }
 
@@ -185,142 +182,136 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  align-items: center; 
-  
-  grid-column-start: 1; 
-  grid-column-end: 3; 
-  grid-row-start: 2; 
+
+  justify-content: center;
+  align-items: center;
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
   grid-row-end: 3;
 }
 
-.resto h1{
+.resto h1 {
   font-size: xx-large;
   text-align: center;
   padding-top: 28px;
   padding-left: 10px;
 }
 
-.resto p{
+.resto p {
   text-align: center;
 
   bottom: 20px;
 }
 
-.phrase{
-  background-image:url("https://www.rts.ch/2020/04/09/09/51/11234996.image?w=1100&h=620"), url("https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg");
-  background-size:300px,cover;
-  background-repeat: no-repeat,repeat;
-  background-position: bottom right -40px,bottom left -200px;
+.phrase {
+  background-image: url('https://www.rts.ch/2020/04/09/09/51/11234996.image?w=1100&h=620'),
+    url('https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg');
+  background-size: 300px, cover;
+  background-repeat: no-repeat, repeat;
+  background-position: bottom right -40px, bottom left -200px;
 
-
-  grid-column-start: 1; 
-  grid-column-end: 3; 
-  grid-row-start: 3; 
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
   grid-row-end: 4;
 }
 
-.phrase h1{
+.phrase h1 {
   text-align: center;
   margin-top: 5px;
 }
-.phrase p{
-  border: 1px solid white;
-  border-radius: 10px;
-  
-  padding: 5px;
-  margin: inherit;
-}
-.phrase p{
+.phrase p {
   border: 1px solid white;
   border-radius: 10px;
 
-  margin: inherit;
   padding: 5px;
+  margin: inherit;
 }
-.phrase p{
+.phrase p {
   border: 1px solid white;
   border-radius: 10px;
 
   margin: inherit;
   padding: 5px;
 }
+.phrase p {
+  border: 1px solid white;
+  border-radius: 10px;
 
+  margin: inherit;
+  padding: 5px;
+}
 
 .transport {
   background-color: wheat;
 
-  grid-column-start: 3; 
-  grid-column-end: 5; 
-  grid-row-start: 2; 
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 2;
   grid-row-end: 4;
 }
 
 .bus {
-  background-image: url("https://www.automobile-propre.com/wp-content/uploads/2020/01/Bus-electrique-Marseille-Volvo-scaled.jpg%27");
+  background-image: url('https://www.automobile-propre.com/wp-content/uploads/2020/01/Bus-electrique-Marseille-Volvo-scaled.jpg%27');
   background-size: cover;
   background-position: center;
 
   text-align: center;
 }
-.bus h1{
-  margin:inherit;
+.bus h1 {
+  margin: inherit;
   padding-top: 5px;
 }
-.bus h2{
+.bus h2 {
   font-size: medium;
-  margin: inherit;
-  padding:10px;
-}
-.bus p{
   margin: inherit;
   padding: 10px;
 }
-
-
+.bus p {
+  margin: inherit;
+  padding: 10px;
+}
 
 .metro {
-  background-image : url("https://media1.ledevoir.com/images_galerie/nwd_726185_566620/image.jpg%27");
+  background-image: url('https://media1.ledevoir.com/images_galerie/nwd_726185_566620/image.jpg%27');
   background-size: cover;
   background-position: center;
 
   text-align: center;
 }
-.metro h1{
-  margin:inherit;
+.metro h1 {
+  margin: inherit;
   padding-top: 5px;
 }
-.metro h2{
+.metro h2 {
   font-size: medium;
   margin: inherit;
-  padding:10px;
+  padding: 10px;
 }
-.metro p{
+.metro p {
   margin: inherit;
   padding: 10px;
 }
 
-
-
 .taxi {
-  background-image: url("https://reporterre.net/local/cache-vignettes/L720xH481/arton19532-5cc60.jpg?1580311421%27");
+  background-image: url('https://reporterre.net/local/cache-vignettes/L720xH481/arton19532-5cc60.jpg?1580311421%27');
   background-size: cover;
   background-position: center;
 
   text-align: center;
 }
-.taxi h1{
-  margin:inherit;
+.taxi h1 {
+  margin: inherit;
   padding: 5px;
 }
-.taxi h2{
+.taxi h2 {
   font-size: medium;
   margin: inherit;
   padding-bottom: 10px;
 }
-.taxi p{
+.taxi p {
   margin: inherit;
   padding: 20px;
 }
-
-

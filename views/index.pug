@@ -3,16 +3,15 @@ extends layout
 block head
   link(rel="stylesheet", href="./css/animated-grid.css")
   link(rel="stylesheet", href="./css/base.css")
-  
+
 block content
   h1 TEAM MIXY
   section.animated-grid
-    script(src="./js/meteo.js")
 
-    .card.meteo.clicable
+    .card.meteo.clicable(name="meteo")
       h1 Lille
       p 20°C
-      
+
 
     .card.info
       h1 Ne pas oublier
@@ -30,13 +29,13 @@ block content
           label(for="vaccin")    Vaccin
 
     .card.vol.clicable
-      h1 Vol 
+      h1 Vol
       h2 Prix moyen : 200€
       p Il y a 4 vols corresponsand à la destination
-      
-    .card.activite
-      h1 Activitées disponibles sur place 
-      .concert.clicable
+
+    .card.activite.clicable
+      h1 Activitées disponibles sur place
+      .concert
         h2 Concerts
       .spectacle.clicable
         h2 Spectacles
@@ -54,14 +53,14 @@ block content
       h2 Le prix moyen : 150€
       p Il y a 25 hotels disponibles
 
-    .card.phrase
-      h1 Phrases type 
+    .card.phrase.clicable
+      h1 Phrases type
       p Bonjour : "Hello"
       p Merci : "Thank you"
       p Derien : "Your welcome"
 
-    .card.transport 
-      .bus.clicable
+    .card.transport
+      .bus
         h1 BUS
         h2 L'arrêt de bus le plus proche se situe à 100m de votre position
         p Un ticket de bus coûte 2€
@@ -70,14 +69,17 @@ block content
         h1 METRO
         h2 L'arrêt de métro le plus proche se situe à 550m de votre position
         p Un ticket de métro coûte 3,50€
- 
+
       .taxi.clicable
+
         h1 TAXI
         h2 Un numero de Taxi local est 0633580611
-        p Nombre de Taxi disponible : 3 
- 
+        p Nombre de Taxi disponible : 3
 
-  
-      
+  script(src="./js/widget.js")
+
+
+
+
 
 
