@@ -18,6 +18,6 @@ req.end(function (res) {
 	if (res.error) throw new Error(res.error);
 
 	for (let i=0; i<10; i++){
-	console.log(res.body['data'][i]["text"]);
+	console.log(res.body.data[i].text);
 	}
 });
