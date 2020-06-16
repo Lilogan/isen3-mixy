@@ -124,6 +124,7 @@
   background-image: url('https://www.u-pec.fr/medias/photo/theatre-visuel-k-sup_1548938310046-jpg');
   background-size: cover;
   background-position: bottom -50px center;
+
   color: white;
   padding: 9px;
   border-radius: 5px;
@@ -146,13 +147,20 @@
   padding: 9px;
   border-radius: 5px;
 }
+.hotel h1 {
+  font-size: xx-large;
+  text-align: center;
+  
 
+  padding-top: 20px;
+  padding-left: 10px;
+}
 .hotel {
   background-image: url('https://www.leparisien.fr/resizer/IGDTYf0fH1rq5UGvCsoR_0ADKyw=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/X6JFKYWT7UKRJNVUKS5LNICV74.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.5;
+
 
   align-items: center;
 
@@ -162,13 +170,7 @@
   grid-row-end: 1;
 }
 
-.hotel h1 {
-  font-size: xx-large;
-  text-align: center;
 
-  padding-top: 20px;
-  padding-left: 10px;
-}
 
 .hotel h2 {
   text-align: center;
