@@ -2,7 +2,6 @@ const axios = require('axios');
 const CronJob = require('cron').CronJob;
 const Country = require('../models/Country');
 
-
 // Function for updating rates of currency in the database
 async function updateRate() {
   try {
@@ -49,9 +48,6 @@ async function updateCost() {
           const result = [...res.data.data.costs].pop();
           if (result) {
             const country = countries.find((element) => element.id == result.country_code);
-            if (country.currency.id !== res.data.data.info.currency_code) {
-              console.log(country.name + ' -> ' + res.data.data.info.currency_code);
-            }
             let cost = new Object();
             if (country.currency.euroRate) {
               if (result.value_budget) cost.low = result.value_budget / country.currency.euroRate;
