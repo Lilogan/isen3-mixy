@@ -9,28 +9,32 @@ block content
   section.animated-grid
     script(src="./js/meteo.js")
 
-    div.card.meteo.taille1.clicable
+    .card.meteo.clicable
       h1 Lille
       p 20°C
       
 
-    div.card.info.taille1.clicable
-      h1 Ne pas oublier :
-      div.check
-        div.visa
+    .card.info.clicable
+      h1 Ne pas oublier
+      .check
+        .visa
           input(type="checkbox" id="visa" name="visa")
-          label(for="visa") Visa
+          label(for="visa")    Visa
 
-        div.monnaie
+        .monnaie
           input(type="checkbox" id="monnaie" name="monnaie")
-          label(for="monnaie") Monnaie locale
+          label(for="monnaie")    Monnaie locale
 
-    div.card.vol.taille2.clicable
+        .vaccin
+          input(type="checkbox" id="vaccin" name="vaccin")
+          label(for="vaccin")    Vaccin
+
+    .card.vol.clicable
       h1 Vol 
       h2 Prix moyen : 200€
       p Il y a 4 vols corresponsand à la destination
       
-    div.card.activite.taille3.clicable
+    .card.activite.clicable
       h1 Activitées disponibles sur place 
       .concert
         h2 Concerts
@@ -41,14 +45,39 @@ block content
       .golf
         h2 Golf
 
-    .card.resto.taille2
+    .card.resto
       h1 Les restaurants
       p Il y a 10 restaurants disponibles
 
-    .card.hotel.taille2.clicable
+    .card.hotel.clicable
       h1 Les hôtels
       h2 Le prix moyen : 150€
       p Il y a 25 hotels disponibles
+
+    .card.phrase.clicable
+      h1 Phrases type 
+      p Bonjour : "Hello"
+      p Merci : "Thank you"
+      p Derien : "Your welcome"
+
+    .card.transport 
+      .bus
+        h1 BUS
+        h2 L'arrêt de bus le plus proche se situe à 100m de votre position
+        p Un ticket de bus coûte 2€
+
+      .metro
+        h1 METRO
+        h2 L'arrêt de métro le plus proche se situe à 550m de votre position
+        p Un ticket de métro coûte 3,50€
+ 
+      .taxi
+        h1 TAXI
+        h2 Un numero de Taxi local est 0633580611
+        p Nombre de Taxi disponible : 3 
+ 
+
+  
       
 
 
