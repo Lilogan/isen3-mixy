@@ -1,0 +1,80 @@
+.vols{
+    
+}
+
+.vol1{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 20px;
+
+    color: black;
+    background-color: white;
+}
+.vol2{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 20px;
+
+    color: black;
+    background-color: white;
+}
+.vol3{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 20px;
+
+    color: black;
+    background-color: white;
+}
+.vol4{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 20px;
+
+    color: black;
+    background-color: white;
+}
+
+.date{
+    margin: inherit;
+    padding-left: 20px;
+}
+.compagnie{
+    grid-column: 1;
+    text-align: center;
+}
+.depart{
+    text-align: center;
+}
+.depart h1{
+    margin: inherit;
+    padding-top: 10px;
+}
+.depart p{
+    margin: inherit;
+}
+.tempsvol img{
+    align-items: center;
+}
+.tempsvol{
+    align-items: center;
+    text-align: center;
+}
+.arrive{
+    text-align: center;
+}
+.arrive h1{
+    margin: inherit;
+    padding-top: 10px;
+}
+.arrive p{
+    margin: inherit;
+}
+.prix{
+    text-align: center;
+}
+
