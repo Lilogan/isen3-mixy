@@ -7,23 +7,26 @@ body {
 }
 
 .card {
+  display: grid;
   border-radius: 30px;
   overflow: hidden;
   transition: all 500ms;
 }
 
+
+
 .taille1 {
-  height: 200px;
-  width: 200px;
+  min-width:600px;
+  min-height: 200px;
 }
 .taille2 {
-  height: 150px;
-  width: 450px;
+  min-width: 300px;
+  min-height: 200px;
 }
 
 .taille3 {
-  height: 400px;
-  width: 300px;
+  min-height: 400px;
+  min-width: 600px;
 }
 /*
 .card:hover {
