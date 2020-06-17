@@ -28,49 +28,49 @@ block content
           input(type="checkbox" id="vaccin" name="vaccin")
           label(for="vaccin")    Vaccin
 
-    .card.vol.clicable
+    .card.vol.clicable(name="vol")
       h1 Vol
       h2 Prix moyen : 200€
       p Il y a 4 vols corresponsand à la destination
 
-    .card.activite.clicable
+    .card.activite
       h1 Activitées disponibles sur place
-      .concert
+      .concert.clicable(name="concert")
         h2 Concerts
-      .spectacle.clicable
+      .spectacle.clicable(name="spectacle")
         h2 Spectacles
-      .accrobranche.clicable
+      .accrobranche.clicable(name="accrobranche")
         h2 Accrobranche
-      .golf.clicable
+      .golf.clicable(name="golf")
         h2 Golf
 
-    .card.resto.clicable
+    .card.resto.clicable(name="restaurant")
       h1 Les restaurants
       p Il y a 10 restaurants disponibles
 
-    .card.hotel.clicable
+    .card.hotel.clicable(name="hotel")
       h1 Les hôtels
       h2 Le prix moyen : 150€
       p Il y a 25 hotels disponibles
 
-    .card.phrase.clicable
+    .card.phrase.clicable(name="phrase")
       h1 Phrases type
       p Bonjour : "Hello"
       p Merci : "Thank you"
       p Derien : "Your welcome"
 
-    .card.transport
-      .bus
+    .card.transport.clicable(name="transport")
+      .bus.clicable(name="transport")
         h1 BUS
         h2 L'arrêt de bus le plus proche se situe à 100m de votre position
         p Un ticket de bus coûte 2€
 
-      .metro.clicable
+      .metro.clicable(name="transport")
         h1 METRO
         h2 L'arrêt de métro le plus proche se situe à 550m de votre position
         p Un ticket de métro coûte 3,50€
 
-      .taxi.clicable
+      .taxi.clicable(name="transport")
 
         h1 TAXI
         h2 Un numero de Taxi local est 0633580611

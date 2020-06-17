@@ -1,0 +1,20 @@
+.meteo {    
+    display: flex;
+    flex-direction: column;
+
+
+    border:1px solid white;
+    border-radius: 20px;
+
+    background-color: white;
+}
+
+.temperature{
+    color: black;
+}
+
+.temps{
+    color: black;
+}
+
+

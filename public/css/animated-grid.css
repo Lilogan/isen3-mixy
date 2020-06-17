@@ -45,11 +45,13 @@
 .meteo p {
   margin: inherit;
   padding-left: 140px;
+  padding-bottom: 150px;
 }
 
 .info {
   background-image: url('https://www.jobboom.com/carriere/wp-content/uploads/2014/08/checklist.jpg');
   background-color: white;
+  
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -81,18 +83,18 @@
 .vol h1 {
   font-size: xx-large;
   text-align: center;
-  padding-top: 10px;
-  padding-left: 10px;
-}
 
+  margin: inherit;
+  padding-top: 30px;
+}
 .vol h2 {
   text-align: center;
-  bottom: 50px;
+  margin: inherit;
 }
 .vol p {
   text-align: center;
-
-  bottom: 80px;
+  margin: inherit;
+  padding-bottom: 20px;
 }
 
 .activite {
@@ -147,14 +149,7 @@
   padding: 9px;
   border-radius: 5px;
 }
-.hotel h1 {
-  font-size: xx-large;
-  text-align: center;
-  
 
-  padding-top: 20px;
-  padding-left: 10px;
-}
 .hotel {
   background-image: url('https://www.leparisien.fr/resizer/IGDTYf0fH1rq5UGvCsoR_0ADKyw=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/X6JFKYWT7UKRJNVUKS5LNICV74.jpg');
   background-size: cover;
@@ -170,13 +165,25 @@
   grid-row-end: 1;
 }
 
+.hotel h1 {
+  font-size: xx-large;
+  text-align: center;
 
+  margin: inherit;
+  padding-top: 60px;
+}
 
 .hotel h2 {
   text-align: center;
+
+  margin: inherit;
+  padding-bottom: 30px;
 }
 .hotel p {
   text-align: center;
+
+  margin: inherit;
+  padding-bottom: 10px;
 }
 
 .resto {
@@ -210,7 +217,7 @@
 .phrase {
   background-image: url('https://www.rts.ch/2020/04/09/09/51/11234996.image?w=1100&h=620'),
     url('https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg');
-  background-size: 300px, cover;
+  background-size: 70%, cover;
   background-repeat: no-repeat, repeat;
   background-position: bottom right -40px, bottom left -200px;
 
