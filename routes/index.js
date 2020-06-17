@@ -14,6 +14,22 @@ router.get('/hotel', function (req, res, next) {
   res.render('hotel', { title: 'Hotel' });
 });
 
+router.get('/concert', function (req, res, next) {
+  res.render('concert', { title: 'Concerts' });
+});
+
+router.get('/spectacle', function (req, res, next) {
+  res.render('spectacle', { title: 'Spectacles' });
+});
+
+router.get('/accrobranche', function (req, res, next) {
+  res.render('accrobranche', { title: 'Accrobranche' });
+});
+
+router.get('/golf', function (req, res, next) {
+  res.render('golf', { title: 'Golf' });
+});
+
 router.get('/vol', function (req, res, next) {
   res.render('vol', { title: 'Vol' });
 });
@@ -22,17 +38,16 @@ router.get('/restaurant', function (req, res, next) {
   res.render('restaurant', { title: 'Restaurant' });
 });
 
-router.get('/bus', function (req, res, next) {
-  res.render('bus', { title: 'BUS' });
+router.get('/transport', function (req, res, next) {
+  res.render('transport', { title: 'Transport' });
 });
 
-router.get('/metro', function (req, res, next) {
-  res.render('metro', { title: 'METRO' });
+router.get('/phrase', function (req, res, next) {
+  res.render('phrase', { title: 'Phrases Type' });
 });
 
-router.get('/taxi', function (req, res, next) {
-  res.render('taxi', { title: 'TAXI' });
+router.get('/activite', function (req, res, next) {
+  res.render('activite', { title: 'Activitées disponibles' });
 });
-
 
 module.exports = router;
