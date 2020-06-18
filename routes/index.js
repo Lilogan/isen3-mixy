@@ -7,7 +7,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/index', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Menu' });
 });
 
 router.get('/meteo', function (req, res, next) {
