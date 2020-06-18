@@ -6,7 +6,7 @@ var amadeus = new Amadeus({
 });
 
 amadeus.shopping.flightDestinations.get({
-    origin : 'PAR',
+    origin : '',
     maxPrice : 200,
     departureDate : '2020-08-01',
 }).then(function(response){
