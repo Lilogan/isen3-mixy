@@ -41,8 +41,28 @@
 .prix{
     text-align: center;
 }
-.note{
-    grid-column: 0;
-    text-align: center;
-    margin-top: 15px;
+.etoile {
+    color: gray;
+    cursor: pointer;
+    padding: 0.0625rem;
+    }
+    
+   
+ .gold {
+    color: #ffdc0f;
+}
+    
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top: 30px;
+    padding-left: 15px;    
+ }
+    
+.stars {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 3em;
 }
