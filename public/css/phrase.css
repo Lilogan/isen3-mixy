@@ -1,0 +1,33 @@
+body{
+    
+    
+
+}
+.background{
+    color: darkcyan;
+
+    background-image: url("https://media-exp1.licdn.com/dms/image/C4E1BAQFZz0H2R09zEQ/company-background_10000/0?e=2159024400&v=beta&t=9F9xCYooMQwH34L9TObcoTCZ9cdLVJxef_O_6FetQUE");
+    background-position: bottom 0 center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+
+.phrase{
+    border:1px solid lavender;
+    border-radius: 15px;
+
+    background-color: lavender;
+    color: grey;
+
+    margin:5px;
+    padding-left: 15px;
+    align-items: center;
+
+}
+
+    
+    
+
