@@ -1,0 +1,28 @@
+body
+{
+    background: url("http://iwallpapers.free.fr/upload/2012/07/31/20120731195229-319cbcc0.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+.formulaire{
+    display: inline-block;
+
+    position: absolute;
+    top:30%;
+    left: 30%;
+
+    padding:20px;
+    border:2px solid white;
+    border-radius: 20px;
+}
+
+.formulaire h1{
+    
+    margin-top: 0;
+}
+
+.nombrepersonne{
+    padding-top: 10px;
+}
