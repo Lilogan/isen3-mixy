@@ -1,0 +1,83 @@
+
+
+.resto1{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 30px;
+
+    color: black;
+    background-color: white;
+    margin : 10px;
+}
+.resto2{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 30px;
+    margin : 10px;
+    color: black;
+    background-color: white;
+}
+.resto3{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 30px;
+    margin : 10px;
+
+    color: black;
+    background-color: white;
+}
+.resto4{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 30px;
+    margin : 10px;
+    color: black;
+    background-color: white;
+}
+
+.nom{
+    margin: inherit;
+    padding-left: 40px;
+}
+.nom h1{
+    border : 3px solid black;
+    text-align: center;  
+}
+.note{
+    grid-column: 1;
+    text-align: center;
+    margin-top : 50px;
+}
+.adresse{
+    grid-column: 2;
+    text-align: center;
+    margin-top: 50px;
+}
+.catégorie {
+    grid-column: 3;
+    text-align : center;
+    margin-top: 50px;
+}
+
+.prix{
+    grid-column: 4;
+    text-align: center;
+    margin-top : 50px;
+}
+.photo{
+    grid-column: 5;
+}
+.p{
+    font-size : 1px;
+}
+.resto1 img {
+    max-height : 200px;
+    width: auto;
+    align-items: center;
+    padding-top : 1px;
+    float: center;
+}
