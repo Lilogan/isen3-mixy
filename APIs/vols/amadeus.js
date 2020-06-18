@@ -6,8 +6,9 @@ var amadeus = new Amadeus({
 });
 
 amadeus.shopping.flightDestinations.get({
-    origin : 'FRA',
+    origin : 'PAR',
     maxPrice : 200,
+    departureDate : '2020-08-01',
 }).then(function(response){
   console.log(response.data);
 }).catch(function(responseError){
