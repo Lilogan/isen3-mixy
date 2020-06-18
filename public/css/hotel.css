@@ -1,0 +1,39 @@
+.hotel1{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border:1px solid white;
+    border-radius: 20px;
+
+    color: black;
+    background-color: white;
+}
+
+.name{
+    margin: inherit;
+    padding-left: 20px;
+
+    border:1px solid white;
+    border-radius: 20px;
+    background-color: teal;
+}
+.emplacement{
+    grid-column: 1;
+    margin-left: 30px;
+}
+.classe{
+    text-align: center;
+}
+.classe h1{
+    margin: inherit;
+    padding-top: 10px;
+}
+
+.prix p{
+    text-align: center;
+    align-items: center;
+
+    font-size: x-large;
+}
+.photo{
+    font-size: medium;
+}
