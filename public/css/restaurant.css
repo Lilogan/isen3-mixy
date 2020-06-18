@@ -1,4 +1,6 @@
-
+.restaurant{
+    display: flex;
+}
 
 .resto1{
     display: grid;
@@ -8,6 +10,10 @@
 
     color: black;
     background-color: white;
+    background-image:url("https://restaurants.3brasseurs.com/a/les3brasseurs-fr/r/600/314/location_447?t=1&version=v1507579610");
+    background-position: right;
+    background-repeat: no-repeat;
+
     margin : 10px;
 }
 
@@ -19,31 +25,24 @@
     border : 3px solid black;
     text-align: center;  
 }
+
+
 .adresse{
-    text-align: center;
-}
-.note{
     grid-column: 1;
+}
+.adresse h1{
+    margin: initial;
     text-align: center;
 }
-
-.catégorie {
-    text-align : center;
+.adresse p{
+    margin: initial;
+    text-align: center;
 }
-
 .prix{
     text-align: center;
 }
-.photo{
-
-}
-.p{
-    font-size : 1px;
-}
-.resto1 img {
-    max-height : 200px;
-    width: auto;
-    align-items: center;
-    padding-top : 1px;
-    float: center;
+.note{
+    grid-column: 0;
+    text-align: center;
+    margin-top: 15px;
 }
