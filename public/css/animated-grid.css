@@ -29,7 +29,6 @@
   background-color: whitesmoke;
   background-size: cover;
   color: black;
-  
 
   grid-column-start: 5;
   grid-column-end: 6;
@@ -51,7 +50,6 @@
 .info {
   background-image: url('https://www.jobboom.com/carriere/wp-content/uploads/2014/08/checklist.jpg');
   background-color: white;
-  
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -125,8 +123,6 @@
   background-image: url('https://www.u-pec.fr/medias/photo/theatre-visuel-k-sup_1548938310046-jpg');
   background-size: cover;
   background-position: bottom -50px center;
-  background;
-
   color: white;
   padding: 9px;
   border-radius: 5px;
@@ -155,7 +151,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 
   align-items: center;
 
