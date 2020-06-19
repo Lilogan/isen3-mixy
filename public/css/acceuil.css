@@ -1,33 +1,56 @@
-body
-{
-    background: url("http://iwallpapers.free.fr/upload/2012/07/31/20120731195229-319cbcc0.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
+body {
+  background: url('/img/background.jpg') no-repeat center center fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
-.formulaire{
-    display: inline-block;
-
-    position: absolute;
-    top:30%;
-    left: 30%;
-
-    padding:20px;
-    border:2px solid white;
-    border-radius: 20px;
+form {
+  border: 1rem;
+  border-radius: 2rem;
+  background: rgba(129, 129, 129, 0.8);
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'start end'
+    'budget traveler'
+    'submit submit';
+  grid-gap: 10px;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.formulaire h1{
-    
-    margin-top: 0;
+label {
+  font-size: 0.8rem;
 }
 
-.nombrepersonne{
-    padding-top: 10px;
+.field {
+  display: flex;
+  flex-direction: column;
 }
 
-.envoie{
-    text-align: center;
-    padding-top: 10px;
+.title {
+  grid-area: title;
+}
+
+.budget {
+  grid-area: budget;
+}
+
+.traveler {
+  grid-area: traveler;
+}
+
+.start {
+  grid-area: start;
+}
+
+.end {
+  grid-area: end;
+}
+
+.submit {
+  grid-area: submit;
 }
