@@ -11,6 +11,10 @@
   --stagger-delay: 100ms;
 }
 
+h1{
+  text-align: center;
+}
+
 @keyframes cardEntrance {
   from {
     opacity: 0;
