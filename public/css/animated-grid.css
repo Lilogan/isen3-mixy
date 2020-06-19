@@ -8,7 +8,7 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
 
-  --stagger-delay: 100ms;
+  --stagger-delay: 500ms;
 }
 
 h1{
@@ -26,6 +26,13 @@ h1{
     transform: scale(1);
     filter: hue-rotate(0deg);
   }
+}
+
+.card{
+  animation: cardEntrance 700ms ease-out;
+  animation-fill-mode: backwards;
+
+  transition: all 500ms;
 }
 
 .meteo {
@@ -322,4 +329,31 @@ h1{
 .taxi p {
   margin: inherit;
   padding: 20px;
+}
+
+
+
+.card:nth-child(3) {
+  animation-delay: calc(1 * var(--stagger-delay));
+}
+.card:nth-child(6) {
+  animation-delay: calc(2 * var(--stagger-delay));
+}
+.card:nth-child(1) {
+  animation-delay: calc(3 * var(--stagger-delay));
+}
+.card:nth-child(2) {
+  animation-delay: calc(4 * var(--stagger-delay));
+}
+.card:nth-child(4) {
+  animation-delay: calc(5 * var(--stagger-delay));
+}
+.card:nth-child(8) {
+  animation-delay: calc(6 * var(--stagger-delay));
+}
+.card:nth-child(7) {
+  animation-delay: calc(7 * var(--stagger-delay));
+}
+.card:nth-child(5) {
+  animation-delay: calc(8 * var(--stagger-delay));
 }
