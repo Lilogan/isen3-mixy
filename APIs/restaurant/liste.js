@@ -1,26 +1,67 @@
-var unirest = require("unirest");
+const axios = require('axios');
+const Restaurant = require('../../models/Restaurant');
 
-var req = unirest("GET", "https://tripadvisor1.p.rapidapi.com/restaurants/list-by-latlng");
+async function getRestaurant(locationId) {
+	const restaurants = await Restaurant.find();
+	console.log(restaurants.lenght);
+	if (restaurants.lenght == 0) {
+		const data = await getRestaurantById(locationId);
+		await Restautant.insertMany(data);
+		return data;
+	}
+	return restaurants;
+}
 
-req.query({
-	"limit": "3",
-	"currency": "EUR",
-    "distance": "2",
-	"lunit": "km",
-	"lang": "en_US",
-	"latitude": "50.6333",
-	"longitude": "3.0667"
-});
+async function getRestaurantById(locationId) {
+	const data = await axios
+		.get('https://tripadvisor1.p.rapidapi.com/restaurants/list', {
+			headers: {
+				'x-rapidapi-host':'tripadvisor1.p.rapidapi.com',
+				'x-rapidapi-key':'307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92',
+				useQueryString: true,
+			},
+			params: {
+				lunit:"km",
+				limit:"30",
+				currency:"EUR",
+				lang:'fr_FR',
+				location_id: locationId,
+				open_now: true,
+				min_rating: 3,
+			},
+		})
+		.then((res) => {
+			console.log(res.data);
+			let restaurants = new Array() ;
+			for (const element of res.data.data) {
+				const restaurant = {
+					name: element.name,
+					address: {
+						country: element.address_obj.country,
+						postcode: element.address_obj.postalcode,
+						state: element.address.state,
+						city: element.address_obj.city,
+						street: element.address
+					},
+					position : {latitude: element.latitude, longitude: element.longitude},
+					price: element.price,
+					rating: element.rating,
+					img: {
+						width: element.photo.images.original.width,
+						height: element.photo.images.original.height,
+						url: element.photo.images.original.url,
+					}
+				};
+					restaurants.push(restaurant);
+			}
+			return restaurants;
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+	return data;
+}
 
-req.headers({
-	"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-	"x-rapidapi-key": "307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92",
-	"useQueryString": true
-});
+module.exports = getRestaurant;
 
-
-req.end(function (res) {
-	if (res.error) throw new Error(res.error);
-
-	console.log(res.body);
-});
+console.log(getRestaurantById(293919));

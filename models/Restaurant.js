@@ -2,12 +2,22 @@ const mongoose = require('mongoose')
 
 const RestaurantsSchema = mongoose.Schema({
     name : String,
-    latitude : Number,
-    longitude : Number,
-    price : Number,
-    note : Number,
+    address: {
+        country: String,
+        postcode: Number,
+        state: String,
+        city: String,
+        street: String,
+    },
+    position: {latitude : Number, longitude : Number},
+    price : String,
+    rating : Number,
     category : String,
-    photos : String,
+    img : {
+        width: Number,
+        height: Number,
+        url: String,
+    }
 
 });
 
