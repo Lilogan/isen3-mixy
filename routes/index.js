@@ -24,7 +24,7 @@ router.get('/attractions', async function (req, res, next) {
 
 router.get('/restaurants', async function (req, res, next) {
   
-  const restaurants = await getRestaurantsList(293919);
+  const restaurants = await getRestaurantsList('Pattaya');
   res.json(restaurants);
 });
 

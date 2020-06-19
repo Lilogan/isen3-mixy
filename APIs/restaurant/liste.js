@@ -1,16 +1,47 @@
 const axios = require('axios');
 const Restaurant = require('../../models/Restaurant');
 
-async function getRestaurant(locationId) {
+async function getRestaurant(placeName) {
 	const restaurants = await Restaurant.find();
 	console.log(restaurants.length);
 	if (restaurants.length == 0) {
+		const locationId = await getPlaceIdByName(placeName);
 		const data = await getRestaurantById(locationId);
 		await Restaurant.insertMany(data);
 		return data;
 	}
 	return restaurants;
 }
+async function getPlaceIdByName(placeName) {
+	const placeId = await axios
+	  .get('https://tripadvisor1.p.rapidapi.com/locations/search', {
+		headers: {
+		  'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
+		  'x-rapidapi-key': '307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92',
+		  useQueryString: true,
+		},
+		params: {
+		  query: placeName,
+		  lang: 'fr_FR',
+		  currency: 'EUR',
+		  units: 'km',
+		  limit: 5,
+		},
+	  })
+	  .then((res) => {
+		const data = res.data.data;
+		for (const result of data) {
+		  if (result.result_type == 'geos' && result.result_object.name == placeName) {
+			return result.result_object.location_id;
+		  }
+		}
+	  })
+	  .catch((error) => {
+		console.error(error);
+	  });
+	console.log(placeId);
+	return placeId;
+  }
 
 async function getRestaurantById(locationId) {
 	const data = await axios
@@ -22,7 +53,7 @@ async function getRestaurantById(locationId) {
 			},
 			params: {
 				lunit:"km",
-				limit:"30",
+				limit:"5",
 				offset: 20,
 				currency:"EUR",
 				lang:'fr_FR',
