@@ -5,7 +5,7 @@ block head
   link(rel="stylesheet", href="./css/base.css")
 
 block content
-  h1 TEAM MIXY
+  h1 Votre voyage : #{data.name} pour #{data.passenger} personnes
   section.animated-grid
 
     .card.meteo.clicable(name="meteo")
@@ -50,8 +50,8 @@ block content
 
     .card.hotel.clicable(name="hotel")
       h1 Les hôtels
-      h2 Le prix moyen : 150€
-      p Il y a 25 hotels disponibles
+      h2 Le prix moyen : #{data.hotel.averagePrice}€
+      p Il y a #{data.hotel.quantity} hotels disponibles
 
     .card.phrase.clicable(name="phrase")
       h1 Phrases type
