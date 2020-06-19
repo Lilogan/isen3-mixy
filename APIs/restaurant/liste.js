@@ -58,7 +58,6 @@ async function getRestaurantById(locationId) {
 				currency:"EUR",
 				lang:'fr_FR',
 				location_id: locationId,
-				min_rating: 3,
 			},
 		})
 		.then((res) => {
