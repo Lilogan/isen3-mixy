@@ -6,7 +6,7 @@ const forList = {
   passenger: 2,
   destinations: [
     {
-      name: Australie,
+      name: 'Australie',
       weather: { note: 4, description: 'Favorable', min: 20, max: 25 },
       image: {
         width: 2560,
@@ -17,7 +17,7 @@ const forList = {
       averageTime: '22h',
     },
     {
-      name: Bahamas,
+      name: 'Bahamas',
       weather: { note: 5, description: 'Trés Favorable', min: 25, max: 30 },
       image: {
         width: 2975,
@@ -31,7 +31,7 @@ const forList = {
 };
 
 const forTrip = {
-  name: Bahamas,
+  name: 'Bahamas',
   weather: { note: 5, description: 'Trés Favorable', min: 25, max: 30 },
   dates: {
     start: '2020-06-18',

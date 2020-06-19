@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+const test = require('../utils/test');
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('acceuil', { title: 'Mixy' });
 });
 
 router.get('/index', function (req, res, next) {
-  res.render('index', { title: 'Menu' });
+  res.render('index', { title: 'Menu', data: test.forTrip });
 });
 
 router.get('/meteo', function (req, res, next) {

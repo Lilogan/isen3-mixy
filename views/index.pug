@@ -30,8 +30,8 @@ block content
 
     .card.vol.clicable(name="vol")
       h1 Vol
-      h2 Prix moyen : 200€
-      p Il y a 4 vols corresponsand à la destination
+      h2 Prix moyen : #{data.flight.averagePrice}€
+      p Il y a #{data.flight.quantity} vols correspondand à la destination
 
     .card.activite
       h1 Activitées disponibles sur place
