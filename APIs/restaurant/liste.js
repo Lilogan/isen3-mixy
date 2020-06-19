@@ -22,7 +22,8 @@ async function getRestaurantById(locationId) {
 			},
 			params: {
 				lunit:"km",
-				limit:"1",
+				limit:"30",
+				offset: 20,
 				currency:"EUR",
 				lang:'fr_FR',
 				location_id: locationId,
