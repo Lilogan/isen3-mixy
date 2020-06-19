@@ -22,7 +22,7 @@ async function getRestaurantById(locationId) {
 			},
 			params: {
 				lunit:"km",
-				limit:"30",
+				limit:"1",
 				currency:"EUR",
 				lang:'fr_FR',
 				location_id: locationId,
@@ -30,13 +30,13 @@ async function getRestaurantById(locationId) {
 			},
 		})
 		.then((res) => {
-			//console.log(res);
+			console.log(res.data.data);
 			let restaurants = new Array();
 			for (const element of res.data.data) {
 				const restaurant = {
 					name: element.name,
 					address: {
-						//country: element.address_obj.country,
+						country: element.address_obj.country,
 						postcode: element.address_obj.postalcode,
 						state: element.address.state,
 						city: element.address_obj.city,
