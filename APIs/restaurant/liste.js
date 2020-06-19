@@ -3,7 +3,7 @@ const Restaurant = require('../../models/Restaurant');
 
 async function getRestaurant(locationId) {
 	const restaurants = await Restaurant.find();
-	console.log(restaurants.lenght);
+	console.log(restaurants.length);
 	if (restaurants.lenght == 0) {
 		const data = await getRestaurantById(locationId);
 		await Restautant.insertMany(data);
