@@ -4,9 +4,9 @@ const Restaurant = require('../../models/Restaurant');
 async function getRestaurant(locationId) {
 	const restaurants = await Restaurant.find();
 	console.log(restaurants.length);
-	if (restaurants.lenght == 0) {
+	if (restaurants.length == 0) {
 		const data = await getRestaurantById(locationId);
-		await Restautant.insertMany(data);
+		await Restaurant.insertMany(data);
 		return data;
 	}
 	return restaurants;
@@ -30,12 +30,13 @@ async function getRestaurantById(locationId) {
 			},
 		})
 		.then((res) => {
+			//console.log(res);
 			let restaurants = new Array();
 			for (const element of res.data.data) {
 				const restaurant = {
 					name: element.name,
 					address: {
-						country: element.address_obj.country,
+						//country: element.address_obj.country,
 						postcode: element.address_obj.postalcode,
 						state: element.address.state,
 						city: element.address_obj.city,
