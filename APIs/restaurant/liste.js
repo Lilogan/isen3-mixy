@@ -26,13 +26,11 @@ async function getRestaurantById(locationId) {
 				currency:"EUR",
 				lang:'fr_FR',
 				location_id: locationId,
-				open_now: true,
 				min_rating: 3,
 			},
 		})
 		.then((res) => {
-			console.log(res.data);
-			let restaurants = new Array() ;
+			let restaurants = new Array();
 			for (const element of res.data.data) {
 				const restaurant = {
 					name: element.name,
@@ -63,5 +61,3 @@ async function getRestaurantById(locationId) {
 }
 
 module.exports = getRestaurant;
-
-console.log(getRestaurantById(293919));
