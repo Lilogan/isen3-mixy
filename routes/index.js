@@ -12,47 +12,47 @@ router.get('/index', function (req, res, next) {
   res.render('index', { title: 'Menu', data: test.forTrip });
 });
 
-router.get('/meteo', function (req, res, next) {
+router.get('/index/meteo', function (req, res, next) {
   res.render('meteo', { title: 'Méteo' });
 });
 
-router.get('/hotel', function (req, res, next) {
+router.get('/index/hotel', function (req, res, next) {
   res.render('hotel', { title: 'Hotel' });
 });
 
-router.get('/concert', function (req, res, next) {
+router.get('/index/concert', function (req, res, next) {
   res.render('concert', { title: 'Concerts' });
 });
 
-router.get('/spectacle', function (req, res, next) {
+router.get('/index/spectacle', function (req, res, next) {
   res.render('spectacle', { title: 'Spectacles' });
 });
 
-router.get('/accrobranche', function (req, res, next) {
+router.get('/index/accrobranche', function (req, res, next) {
   res.render('accrobranche', { title: 'Accrobranche' });
 });
 
-router.get('/golf', function (req, res, next) {
+router.get('/index/golf', function (req, res, next) {
   res.render('golf', { title: 'Golf' });
 });
 
-router.get('/vol', function (req, res, next) {
+router.get('/index/vol', function (req, res, next) {
   res.render('vol', { title: 'Vol' });
 });
 
-router.get('/restaurant', function (req, res, next) {
+router.get('/index/restaurant', function (req, res, next) {
   res.render('restaurant', { title: 'Restaurant' });
 });
 
-router.get('/transport', function (req, res, next) {
+router.get('/index/transport', function (req, res, next) {
   res.render('transport', { title: 'Transport' });
 });
 
-router.get('/phrase', function (req, res, next) {
+router.get('/index/phrase', function (req, res, next) {
   res.render('phrase', { title: 'Phrases Type' });
 });
 
-router.get('/activite', function (req, res, next) {
+router.get('/index/activite', function (req, res, next) {
   res.render('activite', { title: 'Activitées disponibles' });
 });
 
