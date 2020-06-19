@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const filter = require('../middleware/countryFilter');
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+/* GET home page */
+router.get('/', (req, res, next) => {
+  res.render('index', { title: 'Mixy' });
 });
 
-router.get('/countries', filter, (req, res) => {
-  const countries = req.countries;
-  res.json(countries);
+/* POST home page */
+router.post('/', (req, res, next) => {
+  res.render('cities', { title: 'Destinations' });
 });
 
 module.exports = router;
