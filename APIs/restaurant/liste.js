@@ -2,7 +2,7 @@ const axios = require('axios');
 const Restaurant = require('../../models/Restaurant');
 
 async function getRestaurant(placeName) {
-	const restaurants = await Restaurant.find();
+	const restaurants = await Restaurant.find({"address.city": placeName});
 	console.log(restaurants.length);
 	if (restaurants.length == 0) {
 		const locationId = await getPlaceIdByName(placeName);
