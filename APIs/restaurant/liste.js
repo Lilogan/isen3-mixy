@@ -4,7 +4,16 @@ const Restaurant = require('../../models/Restaurant');
 async function getRestaurant(placeName) {
 	const restaurants = await Restaurant.find({"address.city": placeName});
 	console.log(restaurants.length);
-	if (restaurants.length == 0) {
+	//if (restaurants.length == 0) {
+	if(restaurants[0].address.city != placeName){
+		Restaurant.deleteMany({}, function(err) {
+            if (err) {
+                console.log(err)
+            } else {
+				Restaurant.create({name: "last location city", address: {city: placeName} });
+                console.log('success');
+            }
+		});
 		const locationId = await getPlaceIdByName(placeName);
 		const data = await getRestaurantById(locationId);
 		await Restaurant.insertMany(data);
@@ -61,7 +70,6 @@ async function getRestaurantById(locationId) {
 			},
 		})
 		.then((res) => {
-			console.log(res.data.data);
 			let restaurants = new Array();
 			for (const element of res.data.data) {
 				const restaurant = {
