@@ -18,7 +18,7 @@ router.get('/hotels', async function (req, res) {
 
 router.get('/attractions', async function (req, res, next) {
   
-  const attractions = await getAttractionsList(12.91285, 100.87808);
+  const attractions = await getAttractionsList('Bordeaux');
   res.json(attractions);
 });
 

@@ -1,20 +1,52 @@
 const axios = require('axios');
 const Attraction = require('../../models/Attraction');
 
-async function getAttraction(latitude, longitude) {
-  const attractions = await Attraction.find();
+async function getAttraction(placeName) {
+  const attractions = await Attraction.find({"address.city": placeName});
   console.log(attractions.length);
   if (attractions.length == 0) {
-    const data = await getAttractionByLatLng(latitude, longitude);
+    const locationId = await getPlaceIdByName(placeName);
+    const data = await getAttractionById(locationId);
     await Attraction.insertMany(data);
     return data;
   }
   return attractions;
 }
 
-async function getAttractionByLatLng(latitude, longitude, distance = 20, limit = 15) {
+async function getPlaceIdByName(placeName) {
+	const placeId = await axios
+	  .get('https://tripadvisor1.p.rapidapi.com/locations/search', {
+		headers: {
+		  'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
+		  'x-rapidapi-key': '307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92',
+		  useQueryString: true,
+		},
+		params: {
+		  query: placeName,
+		  lang: 'fr_FR',
+		  currency: 'EUR',
+		  units: 'km',
+		  limit: 5,
+		},
+	  })
+	  .then((res) => {
+		const data = res.data.data;
+		for (const result of data) {
+		  if (result.result_type == 'geos' && result.result_object.name == placeName) {
+			return result.result_object.location_id;
+		  }
+		}
+	  })
+	  .catch((error) => {
+		console.error(error);
+	  });
+	console.log(placeId);
+	return placeId;
+  }
+
+async function getAttractionById(locationId) {
   const data = await axios
-    .get('https://tripadvisor1.p.rapidapi.com/attractions/list-by-latlng', {
+    .get('https://tripadvisor1.p.rapidapi.com/attractions/list', {
       headers: {
         'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
         'x-rapidapi-key': '307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92',
@@ -23,11 +55,10 @@ async function getAttractionByLatLng(latitude, longitude, distance = 20, limit =
       params: {
         lunit: 'km',
         currency: 'EUR',
-        distance: distance,
-        limit: limit,
+        offset: 30,
+        limit: 15,
         lang: 'fr_FR',
-        longitude: longitude,
-        latitude: latitude,
+        location_id: locationId,
       },
     })
     .then((res) => {
