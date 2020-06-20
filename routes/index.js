@@ -10,10 +10,9 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/hotels', async function (req, res) {
-  const name = req.query.country;
-  getHotelsList(name);
-  res.send('Test');
+router.get('/hotels', async function (req, res, next) {
+  const hotels = await getHotelsList('Paris',2,'2020-06-21',2);
+  res.json(hotels);
 });
 
 router.get('/attractions', async function (req, res, next) {

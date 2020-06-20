@@ -1,13 +1,16 @@
 const axios = require('axios');
-const Country = require('../../models/Country');
+const Hotel = require('../../models/Hotel');
 
-async function getHotelsListbyCountry(countryName) {
-  const result = await Country.find({ name: countryName, locationId: { $exists: true } });
-  if (result.length == 0) {
-    const locationId = await getPlaceIdByName(countryName);
-    console.log('ID :' + locationId);
-    if (locationId) await Country.updateOne({ name: countryName }, { locationId: locationId });
+async function getHotelsListbyName(placeName, nbPerson, start, duration) {
+  const hotels = await Hotel.find({ "address.city": placeName});
+  console.log(hotels.lenght);
+  if (hotels.length == 0) {
+    const locationId = await getPlaceIdByName(placeName);
+    const data = await getHotelsListbyId(locationId, nbPerson, start, duration);
+    await Hotel.insertMany(data);
+    return data;
   }
+  return hotels;
 }
 
 async function getPlaceIdByName(placeName) {
@@ -41,35 +44,57 @@ async function getPlaceIdByName(placeName) {
   return placeId;
 }
 
-async function getHotelsListbyId(idPlace, nbPerson, start, duration) {
+
+async function getHotelsListbyId(locationId, nbPerson, start, duration) {
   const data = await axios
-    .get('https://tripadvisor1.p.rapidapi.com/hotels/list', {
+    .get('https://tripadvisor1.p.rapidapi.com/hotels/get-details', {
       headers: {
         'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
         'x-rapidapi-key': '307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92',
         useQueryString: true,
       },
       params: {
-        location_id: place,
+        location_id: locationId,
         adults: nbPerson,
-        room: Math.round(nbPerson / 2),
+        rooms: Math.round(nbPerson / 2),
         checkin: start,
         nights: duration,
-        lang: 'fr-FR',
+        lang: 'fr_FR',
         sort: 'recommended',
         currency: 'EUR',
       },
     })
     .then((res) => {
-      return res.data.data;
+      let hotels = new Array();
+      for(const element of res.data.data) {
+        const hotel = {
+          name: element.name,
+         // description: element.description,
+          position: {
+            latitude: element.latitude,
+            longitude: element.longitude,
+          },
+          address: {
+            country: element.address_obj.country,
+            postcode: element.address_obj.postalcode,
+            state: element.address_obj.state,
+            city: element.address_obj.city,
+            street: element.address_obj.street1
+          },
+          rating: element.rating,
+          price: element.price,
+          hotelclass: element.hotel_class,
+          phone: element.phone,
+        }
+        hotels.push(hotel);
+      }
+      return hotels;
     })
     .catch((error) => {
       console.error(error);
     });
-
   console.log(data);
-
   return data;
 }
 
-module.exports = getHotelsListbyCountry;
+module.exports = getHotelsListbyName;
