@@ -56,4 +56,8 @@ router.get('/index/activite', function (req, res, next) {
   res.render('activite', { title: 'Activitées disponibles' });
 });
 
+router.get('/test', function (req, res, next) {
+  res.render('Test', { title: 'Test CSS', data: test.forTrip });
+});
+
 module.exports = router;

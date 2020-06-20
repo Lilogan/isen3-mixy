@@ -1,0 +1,59 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="../css/test.css")
+
+block content
+  h1 Votre voyage : #{data.name} pour #{data.passenger} personnes
+  section.grid
+
+    .card#weather.clickable
+      h2 Lille
+      p 20°C
+
+
+    .card#info
+      h2 Ne pas oublier
+      .check
+        .visa
+          input(type="checkbox" id="visa" name="visa")
+          label(for="visa")    Visa
+
+        .monnaie
+          input(type="checkbox" id="monnaie" name="monnaie")
+          label(for="monnaie")    Monnaie locale
+
+        .vaccin
+          input(type="checkbox" id="vaccin" name="vaccin")
+          label(for="vaccin")    Vaccin
+
+    .card.card-wide#flight.clickable
+      h2 Vol
+      h3 Prix moyen : #{data.flight.averagePrice}€
+      p Il y a #{data.flight.quantity} vols correspondand à la destination
+
+    .card.card-tall#activity
+      h2 Activitées disponibles sur place
+      #concert.clickable
+        h3 Concerts
+      #spectacle.clickable
+        h3 Spectacles
+      #accrobranche.clickable
+        h3 Accrobranche
+      #golf.clickable
+        h3 Golf
+
+    .card.card-wide#restaurant.clickable
+      h2 Les restaurants
+      p Il y a 10 restaurants disponibles
+
+    .card.card-wide#hotel.clickable
+      h2 Les hôtels
+      h3 Le prix moyen : #{data.hotel.averagePrice}€
+      p Il y a #{data.hotel.quantity} hotels disponibles
+
+    .card.card-wide#trad.clickable
+      h2 Phrases type
+      p Bonjour : "Hello"
+      p Merci : "Thank you"
+      p Derien : "Your welcome"
