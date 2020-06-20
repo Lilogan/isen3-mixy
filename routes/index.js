@@ -24,7 +24,7 @@ router.get('/attractions', async function (req, res, next) {
 
 router.get('/restaurants', async function (req, res, next) {
   
-  const restaurants = await getRestaurantsList('Metz');
+  const restaurants = await getRestaurantsList('Lille');
   res.json(restaurants);
 });
 

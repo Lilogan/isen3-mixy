@@ -83,7 +83,6 @@ async function getRestaurantById(locationId) {
 				};
 					restaurants.push(restaurant);
 			}
-			console.log(restaurants);
 			return restaurants;
 		})
 		.catch((error) => {
