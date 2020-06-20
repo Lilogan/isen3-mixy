@@ -60,7 +60,6 @@ async function getHotelsListbyId(locationId, nbPerson, start, duration) {
         checkin: start,
         nights: duration,
         lang: 'fr_FR',
-        sort: 'recommended',
         currency: 'EUR',
       },
     })
@@ -69,7 +68,7 @@ async function getHotelsListbyId(locationId, nbPerson, start, duration) {
       for(const element of res.data.data) {
         const hotel = {
           name: element.name,
-         // description: element.description,
+          description: element.description,
           position: {
             latitude: element.latitude,
             longitude: element.longitude,
@@ -85,7 +84,7 @@ async function getHotelsListbyId(locationId, nbPerson, start, duration) {
           price: element.price,
           hotelclass: element.hotel_class,
           phone: element.phone,
-        }
+        };
         hotels.push(hotel);
       }
       return hotels;
