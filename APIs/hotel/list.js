@@ -3,9 +3,10 @@ const Hotel = require('../../models/Hotel');
 
 async function getHotelsListbyName(placeName, nbPerson, start, duration) {
   const hotels = await Hotel.find({ "address.city": placeName});
-  console.log(hotels.lenght);
+  console.log(hotels.length);
   if (hotels.length == 0) {
     const locationId = await getPlaceIdByName(placeName);
+    console.log(locationId);
     const data = await getHotelsListbyId(locationId, nbPerson, start, duration);
     await Hotel.insertMany(data);
     return data;
