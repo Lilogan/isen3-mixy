@@ -30,7 +30,7 @@ router.get('/restaurants', async function (req, res, next) {
 
 router.get('/meteos', async function (req, res, next) {
   
-  const meteos = await getMeteo("Bordeaux");
+  const meteos = await getMeteo("Nice");
   res.json(meteos);
 });
 
