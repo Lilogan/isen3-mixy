@@ -287,12 +287,12 @@ h1{
   font-size: large;
   margin: inherit;
   padding: inherit;
-  padding: 10px;
+  padding-bottom: 10px;
 }
 .bus p {
   margin: inherit;
   padding: inherit;
-  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .metro {
@@ -310,12 +310,12 @@ h1{
   font-size: large;
   margin: inherit;
   padding: inherit;
-  padding: 10px;
+  padding-bottom: 10px;
 }
 .metro p {
   margin: inherit;
   padding: inherit;
-  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .taxi {
@@ -338,7 +338,7 @@ h1{
 .taxi p {
   margin: inherit;
   padding: inherit;
-  padding: 20px;
+  padding-bottom: 10px;
 }
 
 @media only screen and (max-height: 750px) {
@@ -346,7 +346,7 @@ h1{
   font-size: small;
   }
   .transport p{
-  font-size: x-small;
+  font-size: small;
   }
   .activite{
   font-size: small;
