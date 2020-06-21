@@ -49,13 +49,12 @@ h1{
 
 .meteo h1 {
   margin: inherit;
-  padding-left: 130px;
   padding-top: 5px;
+  text-align : center
 }
 .meteo p {
   margin: inherit;
-  padding-left: 140px;
-  padding-bottom: 150px;
+  text-align : center
 }
 
 .info {
@@ -94,7 +93,7 @@ h1{
   text-align: center;
 
   margin: inherit;
-  padding-top: 30px;
+  padding-top: 5px;
 }
 .vol h2 {
   text-align: center;
@@ -125,6 +124,7 @@ h1{
   background-image: url('https://c.pxhere.com/photos/7a/e0/audience_band_concert_crowd_dancing_festival_lights_live-1563105.jpg!d');
   background-size: cover;
   background-position: bottom -350px center;
+
   color: white;
   padding: 9px;
   border-radius: 5px;
@@ -134,6 +134,7 @@ h1{
   background-image: url('https://www.u-pec.fr/medias/photo/theatre-visuel-k-sup_1548938310046-jpg');
   background-size: cover;
   background-position: bottom -50px center;
+
   color: white;
   padding: 9px;
   border-radius: 5px;
@@ -143,6 +144,7 @@ h1{
   background-image: url('https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/01/31/node_127887/11544385/public/2020/01/31/B9722427892Z.1_20200131162752_000%2BGKDFE27QP.1-0.jpg?itok=dG7Qrio71580484478');
   background-size: cover;
   background-position: bottom -105px center;
+
   color: white;
   padding: 9px;
   border-radius: 5px;
@@ -152,13 +154,14 @@ h1{
   background-image: url('https://www.sport.fr/wp-content/uploads/2020/01/golf-generik-759x300.jpg');
   background-size: cover;
   background-position: bottom -10px center;
+
   color: white;
   padding: 9px;
   border-radius: 5px;
 }
 
 .hotel {
-  background-image: url('https://www.leparisien.fr/resizer/IGDTYf0fH1rq5UGvCsoR_0ADKyw=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/X6JFKYWT7UKRJNVUKS5LNICV74.jpg');
+  background-image: url('https://www.bestwestern-lapaix-reims.com/media/cache/jadro_resize/rc/dC6CaVWO1584535035/jadroRoot/medias/page-chambre/best-western-premier-hotel-de-la-paix-chambre-tradition-mkb-prod-2-.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -176,14 +179,13 @@ h1{
   text-align: center;
 
   margin: inherit;
-  padding-top: 60px;
+  padding-top: 5px;
 }
 
 .hotel h2 {
   text-align: center;
 
   margin: inherit;
-  padding-bottom: 30px;
 }
 .hotel p {
   text-align: center;
@@ -210,22 +212,19 @@ h1{
 .resto h1 {
   font-size: xx-large;
   text-align: center;
-  padding-top: 28px;
+  padding-top: 5px;
   padding-left: 10px;
 }
 
 .resto p {
   text-align: center;
-
-  bottom: 20px;
 }
 
 .phrase {
-  background-image: url('https://www.rts.ch/2020/04/09/09/51/11234996.image?w=1100&h=620'),
-    url('https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg');
-  background-size: 70%, cover;
-  background-repeat: no-repeat, repeat;
-  background-position: bottom right -40px, bottom left -200px;
+  background-image: url('https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   grid-column-start: 1;
   grid-column-end: 3;
@@ -235,28 +234,33 @@ h1{
 
 .phrase h1 {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 3px;
+  color : black;
+  font-weight : bold
 }
 .phrase p {
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 10px;
-
+  font-weight : bold ;
   padding: 5px;
   margin: inherit;
+  color : black;
 }
 .phrase p {
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 10px;
-
+  color : black;
   margin: inherit;
   padding: 5px;
+  font-weight : bold
 }
 .phrase p {
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 10px;
-
+  color : black;
   margin: inherit;
   padding: 5px;
+  font-weight : bold
 }
 
 .transport {
@@ -280,17 +284,19 @@ h1{
   padding-top: 5px;
 }
 .bus h2 {
-  font-size: medium;
+  font-size: large;
   margin: inherit;
-  padding: 10px;
+  padding: inherit;
+  padding-bottom: 10px;
 }
 .bus p {
   margin: inherit;
-  padding: 10px;
+  padding: inherit;
+  padding-bottom: 10px;
 }
 
 .metro {
-  background-image: url('https://media1.ledevoir.com/images_galerie/nwd_726185_566620/image.jpg%27');
+  background-image: url('https://www.pratiques-sociales.org/wp-content/uploads/2016/08/Flou.png');
   background-size: cover;
   background-position: center;
 
@@ -301,17 +307,19 @@ h1{
   padding-top: 5px;
 }
 .metro h2 {
-  font-size: medium;
+  font-size: large;
   margin: inherit;
-  padding: 10px;
+  padding: inherit;
+  padding-bottom: 10px;
 }
 .metro p {
   margin: inherit;
-  padding: 10px;
+  padding: inherit;
+  padding-bottom: 10px;
 }
 
 .taxi {
-  background-image: url('https://reporterre.net/local/cache-vignettes/L720xH481/arton19532-5cc60.jpg?1580311421%27');
+  background-image: url('https://ak.picdn.net/shutterstock/videos/18544/thumb/1.jpg?ip=x480');
   background-size: cover;
   background-position: center;
 
@@ -322,15 +330,31 @@ h1{
   padding: 5px;
 }
 .taxi h2 {
-  font-size: medium;
+  font-size: large;
   margin: inherit;
+  padding: inherit;
   padding-bottom: 10px;
 }
 .taxi p {
   margin: inherit;
-  padding: 20px;
+  padding: inherit;
+  padding-bottom: 10px;
 }
 
+@media only screen and (max-height: 750px) {
+  .transport h2{ 
+  font-size: small;
+  }
+  .transport p{
+  font-size: small;
+  }
+  .activite{
+  font-size: small;
+  }
+  .phrase{
+  font-size: small;
+  }
+  }
 
 
 .card:nth-child(3) {
