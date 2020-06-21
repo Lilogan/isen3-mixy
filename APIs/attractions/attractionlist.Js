@@ -76,7 +76,7 @@ async function getAttractionById(locationId) {
             postcode: element.address_obj.postalcode,
             state: element.address_obj.state,
             city: element.address_obj.city,
-            street: element.address_obj.street,
+            street: element.address_obj.street1,
           },
           img: element.photo.images.original,
         };
