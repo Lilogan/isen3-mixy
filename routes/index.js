@@ -4,6 +4,7 @@ const router = express.Router();
 const getHotelsList = require('../APIs/hotel/list');
 const getAttractionsList = require('../APIs/attractions/attractionlist');
 const getRestaurantsList = require('../APIs/restaurant/liste');
+const getMeteo = require('../APIs/meteo/meteo');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -25,6 +26,12 @@ router.get('/restaurants', async function (req, res, next) {
   
   const restaurants = await getRestaurantsList('Lille');
   res.json(restaurants);
+});
+
+router.get('/meteos', async function (req, res, next) {
+  
+  const meteos = await getMeteo("Bordeaux");
+  res.json(meteos);
 });
 
 module.exports = router;
