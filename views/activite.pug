@@ -1,0 +1,19 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="../css/activite.css")
+
+block content
+    h1 Activitées autour de vous :
+
+    .activite
+
+    for
+      .activite1
+        .nom
+          h1 #{data.activite.name}
+        .categorie
+          p #{data.activite.categorie}
+        .adresse
+          p #{data.activite.adresse}
+        

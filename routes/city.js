@@ -32,4 +32,8 @@ router.get('/:city/activity', infoTrip.attraction, (req, res) => {
   res.render('activity', { title: req.params.city });
 });
 
+router.get('/:city/transport', (req, res, next) => {
+  res.render('transport', { title: req.params.city });
+});
+
 module.exports = router;

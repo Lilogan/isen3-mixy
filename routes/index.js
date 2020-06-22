@@ -5,7 +5,7 @@ const filter = require('../middleware/countryFilter');
 /* GET home page */
 router.get('/', (req, res, next) => {
   if (!req.session.data) res.render('index', { title: 'Mixy' });
-  else res.render('cities', { title: 'Destinations' });
+  else res.render('index', { title: 'Destinations' });
 });
 
 /* POST home page */
