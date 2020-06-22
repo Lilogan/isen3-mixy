@@ -6,55 +6,20 @@ block head
 block content
     h1 Restaurants autour de vous :
     .restaurants
-      .resto1
-        .nom
-          h1 Les trois brasseurs
-        .rating
-          .stars
-            .etoile.gold ☆
-            .etoile ☆
-            .etoile ☆
-            .etoile ☆
-            .etoile ☆
-        
-        .adresse
-          h1 Brasserie
-          p rue du port, Lille
-        .prix
-          p Prix moyen : 12€
+      each restaurant in restaurants
+        .resto
+          .nom
+            h1=restaurant.name
+          .rating
+            .stars
+              .etoile.gold ☆
+              .etoile ☆
+              .etoile ☆
+              .etoile ☆
+              .etoile ☆
 
-      .resto2
-        .nom
-          h1 Burger King
-        .note
-          p Note : 3,9/5
-        .prix
-          p prix moyen : 7€
-        .adresse
-          p 2 rue de lompret, Lille
-        .categorie
-          p Fast Food
-        
-      .resto3
-        .nom
-          h1 Chiba
-        .note
-          p Note : 4,8/5
-        .prix
-          p prix moyen : 15€
-        .adresse
-          p 50 rue Edouard Doyennette, Lille
-        .categorie
-          p Restaurant Japonais
-        
-      .resto4
-        .nom
-          h1 Hilton
-        .note
-          p note : 5/5
-        .prix
-          p prix moyen : 25€
-        .adresse
-          p 12 rue de Lille, Lille
-        .categorie
-          p Restaurant gastronomique
+          .adresse
+            h1 Brasserie
+            p #{restaurant.address.street}
+          .prix
+            p Prix moyen : #{restaurant.price}
