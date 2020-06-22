@@ -45,7 +45,7 @@ body {
     'activity restaurant trad';
 
   grid-template-columns: 1fr 2fr 1fr;
-  grid-auto-rows: minmax(240px, 1fr);
+  grid-auto-rows: minmax(200px, 1fr);
 }
 
 @media screen and (max-width: 800px) {

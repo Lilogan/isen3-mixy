@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const AttractionSchema = mongoose.Schema({
+const ActivitySchema = mongoose.Schema({
   name: String,
   position: { latitude: Number, longitude: Number },
   category: String,
@@ -18,4 +18,4 @@ const AttractionSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Attraction', AttractionSchema, 'attractions');
+module.exports = mongoose.model('Activity', ActivitySchema, 'activities');

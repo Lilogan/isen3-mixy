@@ -27,12 +27,12 @@ block content
           input(type="checkbox" id="vaccin" name="vaccin")
           label(for="vaccin")    Vaccin
 
-    .card.card-wide#flight.clickable
+    .card#flight.clickable
       h2 Vol
       h3 Prix moyen : #{data.flight.averagePrice}€
       p Il y a #{data.flight.quantity} vols correspondand à la destination
 
-    .card.card-tall#activity
+    .card#activity
       h2 Activitées disponibles sur place
       #concert.clickable
         h3 Concerts
@@ -43,16 +43,16 @@ block content
       #golf.clickable
         h3 Golf
 
-    .card.card-wide#restaurant.clickable
+    .card#restaurant.clickable
       h2 Les restaurants
       p Il y a 10 restaurants disponibles
 
-    .card.card-wide#hotel.clickable
+    .card#hotel.clickable
       h2 Les hôtels
       h3 Le prix moyen : #{data.hotel.averagePrice}€
       p Il y a #{data.hotel.quantity} hotels disponibles
 
-    .card.card-wide#trad.clickable
+    .card#trad.clickable
       h2 Phrases type
       p Bonjour : "Hello"
       p Merci : "Thank you"
