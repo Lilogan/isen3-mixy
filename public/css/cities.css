@@ -1,42 +1,48 @@
 .destination {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   border: 1px solid white;
   border-radius: 30px;
 
   color: black;
+  font-size: medium;
+
   background-color: white;
   background-position: right;
   background-repeat: no-repeat;
 
   overflow: hidden;
   margin: 10px;
-  height: 240px;
+  height: 140px;
 
 }
 
 .nom {
   margin: inherit;
-  padding-left: 40px;
-  font-weight: bold;
+
 }
+.nom h1{
+  padding: 20px;
+  border:1px solid white;    
+  border-radius: 20px;
+  background-color: teal;
+}
+
 .prix {
-  border: 3px solid black;
+  font-size: medium;
   text-align: center;
   padding: 5px;
+  padding-top: 30px;
 }
 
-.tempsvol {
-  grid-column: 1;
-}
-.adresse {
-  margin: initial;
-  text-align: center;
-
-}
 .prix {
+  font-size: medium;
   text-align: center;
 }
 .weather {
+  font-size: large;
   text-align: center;
+
+  padding-top: 30px;
 }

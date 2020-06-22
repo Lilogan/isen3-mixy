@@ -10,9 +10,9 @@ block content
         .nom
           h1 #{destination.name}
         .prix
-          h1 Prix moyen du billet : #{destination.averagePrice}
+          p Prix moyen du billet : #{destination.averagePrice}
         .tempsvol
-          h1 Temps de vol : #{destination.averageTime}
-          p Nombre de personnes : #{destination.passenger}
+          h2 • Temps de vol : #{destination.averageTime}
+          p • Nombre de personnes : #{data.passenger}
         .weather
-          h1 La note météo : #{destination.weather.note}
+          p • La note météo : #{destination.weather.note}
