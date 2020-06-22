@@ -1,9 +1,9 @@
 (function initElement() {
-  const clicable = document.getElementsByClassName('clicable');
-  for (const element of clicable) {
-    const name = element.getAttribute('name');
+  const clickable = document.getElementsByClassName('clickable');
+  for (const element of clickable) {
+    const id = element.id;
     element.addEventListener('click', () => {
-      window.location.href = window.location.href + '/' + name;
+      window.location.href = window.location.href + '/' + id;
     });
   }
 })();
