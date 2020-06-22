@@ -106,7 +106,11 @@ h1{
 }
 
 .activite {
-  background-color: white;
+  background-image: url("https://www.make-my-trip.fr/wp-content/uploads/2016/08/Visiter-une-ville-600x330.jpg");
+  background-color:rgb(233, 224,205);
+  background-position: center;
+  background-repeat: no-repeat;
+  
   color: black;
 
   grid-column-start: 5;
@@ -118,46 +122,6 @@ h1{
 .activite h1 {
   font-size: large;
   text-align: center;
-}
-
-.concert {
-  background-image: url('https://c.pxhere.com/photos/7a/e0/audience_band_concert_crowd_dancing_festival_lights_live-1563105.jpg!d');
-  background-size: cover;
-  background-position: bottom -350px center;
-
-  color: white;
-  padding: 9px;
-  border-radius: 5px;
-}
-
-.spectacle {
-  background-image: url('https://www.u-pec.fr/medias/photo/theatre-visuel-k-sup_1548938310046-jpg');
-  background-size: cover;
-  background-position: bottom -50px center;
-
-  color: white;
-  padding: 9px;
-  border-radius: 5px;
-}
-
-.accrobranche {
-  background-image: url('https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/01/31/node_127887/11544385/public/2020/01/31/B9722427892Z.1_20200131162752_000%2BGKDFE27QP.1-0.jpg?itok=dG7Qrio71580484478');
-  background-size: cover;
-  background-position: bottom -105px center;
-
-  color: white;
-  padding: 9px;
-  border-radius: 5px;
-}
-
-.golf {
-  background-image: url('https://www.sport.fr/wp-content/uploads/2020/01/golf-generik-759x300.jpg');
-  background-size: cover;
-  background-position: bottom -10px center;
-
-  color: white;
-  padding: 9px;
-  border-radius: 5px;
 }
 
 .hotel {

@@ -33,16 +33,9 @@ block content
       h2 Prix moyen : #{data.flight.averagePrice}€
       p Il y a #{data.flight.quantity} vols correspondand à la destination
 
-    .card.activite
+    .card.activite.clicable(name="activite")
       h1 Activitées disponibles sur place
-      .concert.clicable(name="concert")
-        h2 Concerts
-      .spectacle.clicable(name="spectacle")
-        h2 Spectacles
-      .accrobranche.clicable(name="accrobranche")
-        h2 Accrobranche
-      .golf.clicable(name="golf")
-        h2 Golf
+
 
     .card.resto.clicable(name="restaurant")
       h1 Les restaurants
