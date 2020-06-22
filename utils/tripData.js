@@ -3,6 +3,7 @@ const Activity = require('../models/Activity');
 const City = require('../models/City');
 const Flight = require('../models/Flight');
 const Hotel = require('../models/Hotel');
+const Restaurant = require('../models/Restaurant');
 
 // City
 
@@ -184,10 +185,9 @@ async function getHotelsOverApi(locationId, nbPerson, start, duration) {
 
 async function getRestaurants(cityName) {
   const restaurants = await Restaurant.find({ 'address.city': cityName });
-  console.log(restaurants.length);
   if (restaurants.length == 0) {
     const city = await getCity(cityName);
-    const data = await getRestaurantOverApi(city.id);
+    const data = await getRestaurantsOverApi(city.id);
     await Restaurant.insertMany(data);
     return data;
   }
