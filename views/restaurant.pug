@@ -8,6 +8,8 @@ block content
     .restaurants
       each restaurant in restaurants
         .resto
+        
+
           .nom
             h1=restaurant.name
           .rating
@@ -19,7 +21,7 @@ block content
               .etoile ☆
 
           .adresse
-            h1 Brasserie
+            h1 #{restaurant.category}
             p #{restaurant.address.street}
           .prix
             p Prix moyen : #{restaurant.price}
