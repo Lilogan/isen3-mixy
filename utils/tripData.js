@@ -25,7 +25,7 @@ async function getCityOverApi(cityName) {
         useQueryString: true,
       },
       params: {
-        query: placeName,
+        query: cityName,
         lang: 'fr_FR',
         currency: 'EUR',
         units: 'km',
@@ -35,7 +35,7 @@ async function getCityOverApi(cityName) {
     .then((res) => {
       const data = res.data.data;
       for (const result of data) {
-        if (result.result_type == 'geos' && result.result_object.name == placeName) {
+        if (result.result_type == 'geos' && result.result_object.name == cityName) {
           const city = {
             name: result.result_object.name,
             id: result.result_object.location_id,
