@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+body {
+  background-color: rgb(30, 44, 62);
+  color: #fff;
+  font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: none;
+}
+
+.grid {
+  width: 95%;
+  height: 100%;
+  display: grid;
+  gap: 1rem;
+
+  grid-template-areas:
+    'weather flight info'
+    'activity hotel trad'
+    'activity restaurant trad';
+
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(240px, 1fr);
+}
+
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-areas:
+      'weather info'
+      'flight flight'
+      'hotel hotel'
+      'activity activity'
+      'activity activity'
+      'restaurant restaurant'
+      'trad trad'
+      'trad trad';
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+#weather {
+  grid-area: weather;
+}
+
+#weather::before {
+  background: url('https://www.coeurdebastides.com/img/meteo/hd/partly-cloudy.png') center/cover;
+}
+
+#flight {
+  grid-area: flight;
+}
+
+#flight::before {
+  background: url('https://www.belambra.fr/les-echappees/wp-inside/uploads/2013/01/comment-bien-voyager-en-avion-suivez-nos-conseils-pour-un-vol-agreable.jpg')
+    center/cover;
+}
+
+#info {
+  grid-area: info;
+}
+
+#hotel {
+  grid-area: hotel;
+}
+
+#hotel::before {
+  background: url('https://www.leparisien.fr/resizer/IGDTYf0fH1rq5UGvCsoR_0ADKyw=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/X6JFKYWT7UKRJNVUKS5LNICV74.jpg')
+    center/cover;
+}
+
+#restaurant {
+  grid-area: restaurant;
+}
+
+#restaurant::before {
+  background: url('https://designmag.fr/wp-content/uploads/2018/09/restaurant-en-pleine-nature-bangkok-plafond-sombre-lumiere-led-comme-lucioles.jpg%27')
+    center/cover;
+}
+
+#activity {
+  grid-area: activity;
+}
+
+#transport {
+  grid-area: transport;
+}
+
+#trad {
+  grid-area: trad;
+}

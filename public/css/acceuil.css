@@ -1,0 +1,56 @@
+body {
+  background: url('/img/background.jpg') no-repeat center center fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  border: 1rem;
+  border-radius: 2rem;
+  background: rgba(129, 129, 129, 0.8);
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'start end'
+    'budget traveler'
+    'submit submit';
+  grid-gap: 10px;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+}
+
+label {
+  font-size: 0.8rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  grid-area: title;
+}
+
+.budget {
+  grid-area: budget;
+}
+
+.traveler {
+  grid-area: traveler;
+}
+
+.start {
+  grid-area: start;
+}
+
+.end {
+  grid-area: end;
+}
+
+.submit {
+  grid-area: submit;
+}
