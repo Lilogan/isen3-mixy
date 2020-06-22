@@ -1,8 +1,4 @@
-.restaurant{
-    display: flex;
-}
-
-.resto1{
+.resto{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     border:1px solid white;
@@ -10,7 +6,6 @@
 
     color: black;
     background-color: white;
-    background-image:url("https://restaurants.3brasseurs.com/a/les3brasseurs-fr/r/600/314/location_447?t=1&version=v1507579610");
     background-position: right;
     background-repeat: no-repeat;
 
@@ -23,7 +18,8 @@
 }
 .nom h1{
     border : 3px solid black;
-    text-align: center;  
+    text-align: center; 
+    padding: 5px; 
 }
 
 

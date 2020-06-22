@@ -29,7 +29,11 @@ router.get('/:city/traduction', (req, res) => {
 });
 
 router.get('/:city/activity', infoTrip.activity, (req, res) => {
-  res.render('activity', { title: req.params.city, activities: req.activities });
+  res.render('activite', { title: req.params.city, activities: req.activities });
+});
+
+router.get('/:city/trad', (req, res) => {
+  res.render('traduction', { title: req.params.city, trad: req.traduction });
 });
 
 module.exports = router;
