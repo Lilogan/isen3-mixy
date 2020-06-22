@@ -14,15 +14,36 @@ block content
           .nom
             h1=restaurant.name
           .rating
+            h1 Note des clients :
             .stars
-              .etoile.gold ☆
-              .etoile ☆
-              .etoile ☆
-              .etoile ☆
-              .etoile ☆
+                if restaurant.rating>0
+                  .etoile.gold ☆
+                else 
+                  .etoile ☆
+                if restaurant.rating >1
+                  .etoile.gold ☆
+                else 
+                  .etoile ☆
+                if restaurant.rating >2
+                  .etoile.gold ☆
+                else 
+                  .etoile ☆
+                if restaurant.rating >3
+                  .etoile.gold ☆
+                else 
+                  .etoile ☆
+                if restaurant.rating >4
+                  .etoile.gold ☆
+                else 
+                  .etoile ☆
+            
+              
 
           .adresse
             h1 #{restaurant.category}
             p #{restaurant.address.street} <br> #{restaurant.address.city}
           .prix
             p Prix moyen : #{restaurant.price}
+
+
+      

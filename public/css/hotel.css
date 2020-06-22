@@ -55,8 +55,14 @@ padding: 0.0625rem;
 	flex-direction: column;
     align-items: center;
 
+    margin-top: 10px;
     padding-right: 15px;
 }
+.rating h1{
+    font-size: medium;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+ }
 
 .stars {
 	display: inline-flex;
