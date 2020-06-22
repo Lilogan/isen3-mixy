@@ -11,7 +11,8 @@ async function getCity(cityName) {
   const city = await City.findOne({ name: cityName });
   if (city == null) {
     const data = await getCityOverApi(cityName);
-    await City.insertMany(data);
+    console.log(data);
+    await City.insertMany([data]);
     return data;
   }
   return city;
@@ -62,7 +63,7 @@ async function getCityOverApi(cityName) {
 
 async function getActivities(cityName) {
   const activities = await Activity.find({ 'address.city': cityName });
-  if (attractions.length == 0) {
+  if (activities.length == 0) {
     const city = await getCity(cityName);
     const data = await getActivitiesOverApi(city.id);
     await Activity.insertMany(data);
@@ -109,7 +110,7 @@ async function getActivitiesOverApi(locationId) {
         };
         activities.push(activities);
       }
-      return activity;
+      return activities;
     })
     .catch((error) => {
       console.error(error);
@@ -221,7 +222,7 @@ async function getRestaurantsOverApi(locationId) {
             postcode: element.address_obj.postalcode,
             state: element.address.state,
             city: element.address_obj.city,
-            street: element.address,
+            street: element.address_obj.street1,
           },
           position: { latitude: element.latitude, longitude: element.longitude },
           price: element.price,
@@ -242,4 +243,4 @@ async function getRestaurantsOverApi(locationId) {
   return data;
 }
 
-module.exports = { getActivities, getHotels, getRestaurants };
+module.exports = { getCity, getActivities, getHotels, getRestaurants };
