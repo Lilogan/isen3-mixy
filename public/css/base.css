@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+body {
+  background-color: rgb(30, 44, 62);
+  color: #fff;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.card {
+  display: grid;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: all 500ms;
+}
+
+.taille1 {
+  min-width: 600px;
+  min-height: 200px;
+}
+.taille2 {
+  min-width: 300px;
+  min-height: 200px;
+}
+
+.taille3 {
+  min-height: 400px;
+  min-width: 600px;
+}
+/*
+.card:hover {
+    transform: translateY(-3px) scale(1.1);
+ }
+*/

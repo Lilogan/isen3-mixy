@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const CountrySchema = mongoose.Schema({
   id: String,
-  locationId: String,
   name: String,
   latitude: Number,
   longitude: Number,
