@@ -24,7 +24,7 @@ router.get('/:city/weather', (req, res) => {
   res.render('weather', { title: req.params.city });
 });
 
-router.get('/:city/traduction', (req, res) => {
+router.get('/:city/trad', (req, res) => {
   res.render('traduction', { title: req.params.city });
 });
 
