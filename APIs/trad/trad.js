@@ -1,15 +1,9 @@
-
-const url ="mongodb+srv://TeamMixy:NicoMixy@mixy-cu5lx.mongodb.net/test?retryWrites=true&w=majority"
-const MongoClient = require ('mongodb'). MongoClient;
-const client = new MongoClient(url);
-const dbName = 'dbTest';
 const axios= require('axios');
-const Langue= "es"
-const Text=["hey, what time is it?", "What time is it?", "Where is the metro?"]
-    MongoClient.connect(url, function(err, client) {
+
+
+async function Tradu(Langue,Text) {
       let Phrases = new Array();
-      const col = client.db(dbName).collection('Phrases');
-      for (let i=0; i<3; i++){
+      for (let i=0; i<2; i++){
         axios({
         "method":"POST",
         "url":"https://microsoft-translator-text.p.rapidapi.com/translate",
@@ -31,19 +25,12 @@ const Text=["hey, what time is it?", "What time is it?", "Where is the metro?"]
       .then((response)=>{
         console.log(response.data[0].translations[0]);
         Phrases.push(response.data[0].translations[0]);
-        if (i==2){
-          console.log(Phrases);
-          col.insert(Phrases);
-        }
-
-
       })
       .catch((error)=>{
         console.log(error);
     })
 
-
     }
-
-    })
-
+    return Phrases;
+  }
+console.log(Tradu("fr",["Hello, how are you my boy?","What time is it bro?"]));
