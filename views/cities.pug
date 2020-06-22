@@ -1,8 +1,18 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+block head
+  link(rel="stylesheet", href="../css/cities.css")
 
-  
-  
+block content
+  h1 Veuillez choisir une destination :
+    each destination in destinations
+      .destination
+        .nom            
+          h1 #{destination.test.name}
+        .prix
+          h1 Prix moyen du billet : #{destination.test.averagePrice}
+        .tempsvol
+          h1 Temps de vol : #{destination.test.averageTime}
+          p Nombre de personnes : #{destination.test.passenger}
+        .weather
+          h1 La note météo : #{destination.test.weather.note}

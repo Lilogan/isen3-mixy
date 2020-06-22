@@ -1,0 +1,42 @@
+.destination {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  border: 1px solid white;
+  border-radius: 30px;
+
+  color: black;
+  background-color: white;
+  background-position: right;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+  margin: 10px;
+  height: 240px;
+
+}
+
+.nom {
+  margin: inherit;
+  padding-left: 40px;
+  font-weight: bold;
+}
+.prix {
+  border: 3px solid black;
+  text-align: center;
+  padding: 5px;
+}
+
+.tempsvol {
+  grid-column: 1;
+}
+.adresse {
+  margin: initial;
+  text-align: center;
+
+}
+.prix {
+  text-align: center;
+}
+.weather {
+  text-align: center;
+}
