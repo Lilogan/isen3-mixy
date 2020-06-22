@@ -1,40 +1,47 @@
 .activite{
-    display: flex;
-}
-
-.activite1{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     border:1px solid white;
-    border-radius: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    margin-bottom:10px;
 
     color: black;
     background-color: white;
-    background-image:url("https://restaurants.3brasseurs.com/a/les3brasseurs-fr/r/600/314/location_447?t=1&version=v1507579610");
-    background-position: right;
-    background-repeat: no-repeat;
-
-    margin : 10px;
 }
 
 .nom{
     margin: inherit;
-    padding-left: 40px;
+    padding: 20px;
+
+    border:1px solid white;
+    border-radius: 20px;
+    
+    background-color: teal;
 }
 .nom h1{
     border : 3px solid black;
     text-align: center;  
+    padding: 5px;
+}
+
+.img{
+    height: 100%;
+    padding-left: 30px;
+    grid-row: 1 /3;
+    grid-column: 4 / auto;
 }
 
 
-.adresse{
-    grid-column: 1;
-}
-.adresse h1{
-    margin: initial;
+.categorie p{
     text-align: center;
+    padding-top: 40px;
+    font-size: x-large;
 }
+
 .adresse p{
-    margin: initial;
     text-align: center;
+    padding-top: 40px;
+    font-size: x-large;
 }

@@ -4,7 +4,7 @@ block head
   link(rel="stylesheet", href="../css/restaurant.css")
 
 block content
-    h1 Restaurants autour de vous :
+    h1 Restaurants à #{title} :
     .restaurants
       each restaurant in restaurants
         .resto
@@ -23,6 +23,7 @@ block content
             p #{restaurant.address.street} <br> #{restaurant.address.city}
           .prix
             p Prix moyen : #{restaurant.price}
+          .img
           img(src=restaurant.img.url, alt=restaurant.name)
 
 
