@@ -6,7 +6,7 @@ block head
 block content
   h1 Veuillez choisir une destination :
     each destination in data.destinations
-      .destination
+      .destination.clickable(id=destination.name)
         .nom
           h1 #{destination.name}
         .prix

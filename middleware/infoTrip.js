@@ -1,5 +1,3 @@
-const { request } = require('express');
-
 const tripData = require('../utils/tripData');
 
 async function activity(req, res, next) {
@@ -17,4 +15,8 @@ async function restaurant(req, res, next) {
   next();
 }
 
-module.exports = { activity, hotel, restaurant };
+async function flight(req, res, next) {
+  req.flights = await tripData.getFlightsByCity(req.params.city, req.session.data.startDate, req.session.data.endDate);
+}
+
+module.exports = { activity, hotel, restaurant, flight };

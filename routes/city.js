@@ -8,8 +8,8 @@ router.get('/:city', (req, res) => {
   res.render('test', { title: req.params.city, data: test.forTrip });
 });
 
-router.get('/:city/flight', (req, res) => {
-  res.render('flight', { title: req.params.city });
+router.get('/:city/flight', infoTrip.flight, (req, res) => {
+  res.render('flight', { title: req.params.city, flights: req.flights });
 });
 
 router.get('/:city/hotel', infoTrip.hotel, (req, res) => {
@@ -29,7 +29,7 @@ router.get('/:city/traduction', (req, res) => {
 });
 
 router.get('/:city/activity', infoTrip.activity, (req, res) => {
-  res.render('activite', { title: req.params.city, activities: req.activities });
+  res.render('activity', { title: req.params.city, activities: req.activities });
 });
 
 module.exports = router;

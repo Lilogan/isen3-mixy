@@ -15,4 +15,4 @@ function getDistanceByCoords(coords1, coords2) {
   );
 }
 
-module.exports = { getDistanceByCoords };
+module.exports = getDistanceByCoords;

@@ -1,4 +1,5 @@
 const axios = require('axios');
+const Country = require('../models/Country');
 const Activity = require('../models/Activity');
 const City = require('../models/City');
 const Flight = require('../models/Flight');
@@ -243,4 +244,107 @@ async function getRestaurantsOverApi(locationId) {
   return data;
 }
 
-module.exports = { getCity, getActivities, getHotels, getRestaurants };
+// Flights
+
+async function getFlightsByCity(cityName, outboundDate, inboundDate) {
+  const flights = await Flight.find({
+    'outbound.destination.city': cityName,
+    'outbound.data': outboundDate,
+    'inbound.date': inboundDate,
+  });
+  if (flights.length == 0) {
+    const city = await getCity(cityName);
+    const data = await getFlightsByCountry(FR, city.country, outboundDate, inboundDate);
+    await Flight.insertMany(data);
+  }
+  return flights;
+}
+
+async function getFlightsByCountry(country, outboundDate, inboundDate) {
+  const flights = await Flight.find({
+    destinationCountry: country,
+    'outbound.data': outboundDate,
+    'inbound.date': inboundDate,
+  });
+  if (flights.length == 0) {
+    const country = await Country.findOne({ name: country });
+    const data = await getFlightsOverApi(FR, country.id, outboundDate, inboundDate);
+    await Flight.insertMany(data);
+    return data;
+  }
+  return flights;
+}
+
+async function getFlightsOverApi(originId, destinationId, outboundDate, inboundDate) {
+  const data = await axios
+    .get(
+      'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/FR/EUR/fr-FR/' +
+        originId +
+        '-sky/' +
+        destinationId +
+        '-sky/' +
+        outboundDate +
+        '/' +
+        inboundDate,
+      {
+        headers: {
+          'x-rapidapi-host': 'skyscanner-skyscanner-flight-search-v1.p.rapidapi.com',
+          'x-rapidapi-key': process.env.RAPIDAPI_KEY,
+          useQueryString: true,
+        },
+      }
+    )
+    .then((res) => {
+      let flights = new Array();
+      for (const route of res.Routes) {
+        const quote = res.Quotes.filter((quote) => quote.QuoteId == route.QuoteIds[0]);
+
+        const outOriginPlace = res.Places.filter((place) => place.PlaceId == quote.OutboundLeg.OriginId);
+        const inOriginPlace = res.Places.filter((place) => place.PlaceId == quote.InboundLeg.OriginId);
+        const outDestinationPlace = res.Places.filter((place) => place.PlaceId == quote.OutboundLeg.DestinationId);
+        const inDestinationPlace = res.Places.filter((place) => place.PlaceId == quote.OutboundLeg.DestinationId);
+
+        const flight = {
+          originCountry: outOriginPlace.CountryName,
+          destinationCountry: outDestinationPlace.CountryName,
+          price: route.Prices,
+          direct: quote.Direct,
+          outbound: {
+            origin: {
+              iata: outOriginPlace.IataCode,
+              city: outOriginPlace.CityId,
+              name: outOriginPlace.Name,
+            },
+            destination: {
+              iata: outDestinationPlace.IataCode,
+              city: outDestinationPlace.CityId,
+              name: outDestinationPlace.Name,
+            },
+            date: new Date(quote.OutboundLeg.DepartureDate).getDate(),
+            carrier: res.Carriers.filter((carrier) => carrier.CarriersId == quote.OutboundLeg.CarriersId),
+          },
+          inbound: {
+            origin: {
+              iata: inOriginPlace.IataCode,
+              city: inOriginPlace.CityId,
+              name: inOriginPlace.Name,
+            },
+            destination: {
+              iata: inDestinationPlace.IataCode,
+              city: inDestinationPlace.CityId,
+              name: inDestinationPlace.Name,
+            },
+            date: new Date(quote.InboundLeg.DepartureDate).getDate(),
+            carrier: res.Carriers.filter((carrier) => carrier.CarriersId == quote.InboundLeg.CarriersId),
+          },
+        };
+        flights.push(flight);
+      }
+      return flights;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+module.exports = { getCity, getActivities, getHotels, getRestaurants, getFlightsByCountry, getFlightsByCity };
