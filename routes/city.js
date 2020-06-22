@@ -32,8 +32,9 @@ router.get('/:city/restaurant', (req, res, next) => {
   res.render('restaurant', { title: req.params.city });
 });
 
-router.get('/:city/activite', (req, res, next) => {
-  res.render('activite', { title: req.params.city });
+
+router.get('/:city/transport', (req, res, next) => {
+  res.render('transport', { title: req.params.city });
 });
 
 module.exports = router;
