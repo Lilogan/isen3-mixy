@@ -1,8 +1,8 @@
 
-//const url ="mongodb+srv://TeamMixy:NicoMixy@mixy-cu5lx.mongodb.net/test?retryWrites=true&w=majority"
-//const MongoClient = require ('mongodb'). MongoClient;
-//const client = new MongoClient(url);
-//const dbName = 'dbTest';
+const url ="mongodb+srv://TeamMixy:NicoMixy@mixy-cu5lx.mongodb.net/test?retryWrites=true&w=majority"
+const MongoClient = require ('mongodb'). MongoClient;
+const client = new MongoClient(url);
+const dbName = 'dbTest';
 const axios= require('axios');
 //const Langue= "es"
 
