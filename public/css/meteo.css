@@ -1,20 +1,19 @@
-.meteo {    
+.meteo {
     display: flex;
     flex-direction: column;
 
-
+    font-weight: bold;
     border:1px solid white;
     border-radius: 20px;
 
     background-color: white;
+    background-image: url('https://www.terre-net.fr/Content/images/Meteo/picto-svg/3.svg%27');
+    background-position: right;
+    background-repeat: no-repeat;
+    margin : 20px;
 }
 
-.temperature{
-    color: black;
+.meteo .ville{
+    text-align: center;
+    color : black;
 }
-
-.temps{
-    color: black;
-}
-
-
