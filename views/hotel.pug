@@ -6,23 +6,20 @@ block head
 block content
     h1 La liste des Hôtels disponibles :
 
-    .hotel1
-        .name
-          h1 name
-        .emplacement
-          p country <br> city <br> adresse          
-        .classe
-          h1 hotelclass
-        .prix
-          p 26€
-        .photo
-          img(src="", alt="") 
-        .rating
-          .stars
-            .etoile.gold ☆
-            .etoile ☆
-            .etoile ☆
-            .etoile ☆
-            .etoile ☆
+    each hotel in hotels
+        .hotel
+          .name
+            h1 #{hotel.name}
+          .emplacement
+            p  #{hotel.address.street} <br> #{hotel.address.city}
+          .classe
+           h1 #{hotel.hotelClass}
+          .prix
+            p #{hotel.price}
+          .photo
+            img(src="", alt="") 
+          .rating
+            p #{hotel.rating}
+          
             
         

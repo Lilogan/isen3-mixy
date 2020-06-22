@@ -57,8 +57,8 @@ body {
       'activity activity'
       'activity activity'
       'restaurant restaurant'
-      'trad trad'
-      'trad trad';
+      'traduction traduction'
+      'traduction traduction';
 
     grid-template-columns: 1fr 1fr;
   }
@@ -143,7 +143,7 @@ body {
 }
 
 #trad {
-  grid-area: trad;
+  grid-area: traduction;
   color: black;
 
   background-image: url('https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg');

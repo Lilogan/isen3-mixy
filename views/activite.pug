@@ -7,13 +7,11 @@ block content
     h1 Activitées autour de vous :
 
     .activite
-
-    for
-      .activite1
+      each activite in activities
         .nom
-          h1 #{data.activite.name}
+          h1 #{activite.name}
         .categorie
-          p #{data.activite.categorie}
+          p #{activite.categorie}
         .adresse
-          p #{data.activite.adresse}
+          p #{activite.adresse}
         
