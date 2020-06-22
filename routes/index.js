@@ -9,6 +9,8 @@ router.get('/', (req, res, next) => {
 
 /* POST home page */
 router.post('/', (req, res, next) => {
+  req.session.startDate = req.query.startDate;
+  req.session.endDate = req.query.endDate;
   res.render('cities', { title: 'Destinations' });
 });
 

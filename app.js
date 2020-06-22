@@ -1,6 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const session = require('cookie-session');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv');
@@ -33,6 +34,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  session({
+    name: 'session',
+    keys: ['key1', 'key2'],
+    cookie: {
+      secure: true,
+      httpOnly: true,
+      expires: new Date(Date.now() + 60 * 60 * 1000),
+    },
+  })
+);
 
 // Define route
 app.use('/', indexRouter);

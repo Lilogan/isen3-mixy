@@ -18,7 +18,7 @@ const countries = [
       { note: 2, description: 'Peu favorable' },
       { note: 2, description: 'Peu favorable' },
     ],
-    currency: { id: 'AFN', name: 'Afghani afghan', symbole: '{0,1}Af|]1,+Inf[Afs' },
+    currency: { id: 'AFN', name: 'Afghani afghan', symbole: '؋' },
     latitude: 33.9391,
     longitude: 67.71,
   },
