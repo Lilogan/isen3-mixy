@@ -33,4 +33,6 @@ module.exports = async (req, res, next) => {
   }
 
   let countries = await Country.find(query);
+
+  next();
 };
