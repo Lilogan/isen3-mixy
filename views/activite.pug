@@ -1,17 +1,16 @@
 extends layout
 
 block head
-  link(rel="stylesheet", href="../css/activite.css")
+  link(rel="stylesheet", href="../css/activity.css")
 
 block content
     h1 Activitées autour de vous :
 
     .activite
-      each activite in activities
+      each activity in activities
         .nom
-          h1 #{activite.name}
+          h1= activity.name
         .categorie
-          p #{activite.categorie}
+          p= activity.category
         .adresse
-          p #{activite.adresse}
-        
+          p= activity.address.street
