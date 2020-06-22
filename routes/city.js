@@ -20,4 +20,20 @@ router.get('/:city/restaurant', (req, res, next) => {
   res.render('restaurant', { title: req.params.city });
 });
 
+router.get('/:city/meteo', (req, res, next) => {
+  res.render('meteo', { title: req.params.city });
+});
+
+router.get('/:city/phrase', (req, res, next) => {
+  res.render('phrase', { title: req.params.city });
+});
+
+router.get('/:city/restaurant', (req, res, next) => {
+  res.render('restaurant', { title: req.params.city });
+});
+
+router.get('/:city/activite', (req, res, next) => {
+  res.render('activite', { title: req.params.city });
+});
+
 module.exports = router;
