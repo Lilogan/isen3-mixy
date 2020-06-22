@@ -32,7 +32,7 @@ block content
       h3 Prix moyen : #{data.flight.averagePrice}€
       p Il y a #{data.flight.quantity} vols correspondand à la destination
 
-    .card#activity
+    .card#activity.clickable
       h2 Activitées disponibles sur place
 
     .card#restaurant.clickable
@@ -49,3 +49,7 @@ block content
       p Bonjour : "Hello"
       p Merci : "Thank you"
       p Derien : "Your welcome"
+
+    script(src="./js/widget.js")
+
+
