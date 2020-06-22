@@ -6,7 +6,7 @@ block head
 block content
   h1 Veuillez choisir une destination :
     each destination in data.destinations
-      .destination.clickable(id=data.destinations.name)
+      .destination.clicker(id=destination.name)
         .nom
           h1 #{destination.name}
         .prix
@@ -16,3 +16,5 @@ block content
           p • Nombre de personnes : #{data.passenger}
         .weather
           p • La note météo : #{destination.weather.note}
+
+      script(src="./js/widget.js")
