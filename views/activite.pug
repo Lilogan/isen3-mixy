@@ -5,12 +5,15 @@ block head
 
 block content
     h1 Activitées autour de vous :
+
     .activite
-    
+
+    for
       .activite1
         .nom
-          h1 Les trois brasseurs
-        .categotie
-          p 
+          h1 #{data.activite.name}
+        .categorie
+          p #{data.activite.categorie}
         .adresse
+          p #{data.activite.adresse}
         
