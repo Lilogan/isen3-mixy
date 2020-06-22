@@ -135,16 +135,12 @@ body {
   background-color:rgb(233, 224,205);
   background-position: center;
   background-repeat: no-repeat;
-  
+
 }
 
-#transport {
-  grid-area: transport;
-}
 
 #trad {
   grid-area: trad;
-  color: black;
 
   background-image: url('https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg');
   background-size: cover;
