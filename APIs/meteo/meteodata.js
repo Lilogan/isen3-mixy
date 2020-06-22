@@ -1,13 +1,15 @@
 const axios = require('axios');
 
-async function getHistoryMeteo(placeName,dateString){
+async function getHistoryMeteo(latitude, longitude, start, end){
     const data = await axios
-        .get('http://api.worldweatheronline.com/premium/v1/weather.ashx', {
+        .get('https://wx/almanac/daily', {
             params: {
-                q: placeName,
-                date: dateString,
-                Key: '487c5cdd91084364a7a105714202206',
-                format: "json",
+                key: 'dc40707f1fe94c2daf1f5ddf990a12e6',
+                lat: latitude,
+                lon: longitude,
+                start_date: start,
+                end_date: end,
+                lang: 'fr',
             }
         })
         .then((res) => {
@@ -21,4 +23,4 @@ async function getHistoryMeteo(placeName,dateString){
     return data;
 }
 
-console.log(getHistoryMeteo('Lille','2021-08-16')) ;
+console.log(getHistoryMeteo(38.12,-78.543,'2019-06-18','2019-06-19')) ;
