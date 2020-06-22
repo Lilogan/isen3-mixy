@@ -8,9 +8,9 @@ const Hotel = require('../models/Hotel');
 
 async function getCity(cityName) {
   const city = await City.findOne({ name: cityName });
-  if (city != undefined) {
+  if (city == null) {
     const data = await getCityOverApi(cityName);
-    await City.insert(data);
+    await City.insertMany(data);
     return data;
   }
   return city;

@@ -5,7 +5,7 @@ const test = require('../utils/test');
 /* GET city page */
 
 router.get('/:city', (req, res) => {
-  res.render('test', { title: req.params.city, data: test.forTrip });
+  res.render('city', { title: req.params.city, data: test.forTrip });
 });
 
 router.get('/:city/flight', (req, res) => {
