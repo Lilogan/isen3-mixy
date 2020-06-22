@@ -11,4 +11,4 @@ const FlightsSchema = mongoose.Schema({
     Cost : Number,
 });
 
-module.exports = mongoose.model('flight',FlightsSchema, 'flights');
+module.exports = mongoose.model('Flight',FlightsSchema, 'flights');

@@ -1,48 +1,17 @@
 const axios = require('axios');
-const Attraction = require('../../models/Attraction');
+const Attraction = require('../models/Attraction');
+const getCity = require('./city');
 
-async function getAttraction(placeName) {
-  const attractions = await Attraction.find({"address.city": placeName});
-  console.log(attractions.length);
+async function getAttraction(cityName) {
+  const attractions = await Attraction.find({"address.city": cityName});
   if (attractions.length == 0) {
-    const locationId = await getPlaceIdByName(placeName);
-    const data = await getAttractionById(locationId);
+    const city = await getCity(cityName);
+    const data = await getAttractionById(city.id);
     await Attraction.insertMany(data);
     return data;
   }
   return attractions;
 }
-
-async function getPlaceIdByName(placeName) {
-	const placeId = await axios
-	  .get('https://tripadvisor1.p.rapidapi.com/locations/search', {
-		headers: {
-		  'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
-		  'x-rapidapi-key': '307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92',
-		  useQueryString: true,
-		},
-		params: {
-		  query: placeName,
-		  lang: 'fr_FR',
-		  currency: 'EUR',
-		  units: 'km',
-		  limit: 5,
-		},
-	  })
-	  .then((res) => {
-		const data = res.data.data;
-		for (const result of data) {
-		  if (result.result_type == 'geos' && result.result_object.name == placeName) {
-			return result.result_object.location_id;
-		  }
-		}
-	  })
-	  .catch((error) => {
-		console.error(error);
-	  });
-	console.log(placeId);
-	return placeId;
-  }
 
 async function getAttractionById(locationId) {
   const data = await axios

@@ -4,13 +4,18 @@ const filter = require('../middleware/countryFilter');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Mixy' });
+  if (!req.session.data) res.render('initForm', { title: 'Mixy' });
+  else res.render('cities', { title: 'Destinations' });
 });
 
 /* POST home page */
 router.post('/', (req, res, next) => {
-  req.session.startDate = req.query.startDate;
-  req.session.endDate = req.query.endDate;
+  req.session.data = {
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    traveler: req.body.traveler,
+    budget: req.body.budget,
+  };
   res.render('cities', { title: 'Destinations' });
 });
 
