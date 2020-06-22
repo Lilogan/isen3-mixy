@@ -108,7 +108,7 @@ async function getActivitiesOverApi(locationId) {
           },
           img: element.photo.images.original,
         };
-        activities.push(activities);
+        activities.push(activity);
       }
       return activities;
     })
