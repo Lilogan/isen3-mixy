@@ -13,11 +13,11 @@ router.get('/:city/flight', (req, res) => {
 });
 
 router.get('/:city/hotel', infoTrip.hotel, (req, res) => {
-  res.render('hotel', { title: req.params.city , hotel: req.hotel});
+  res.render('hotel', { title: req.params.city, hotel: req.hotel });
 });
 
 router.get('/:city/restaurant', infoTrip.restaurant, (req, res) => {
-  res.render('restaurant', { title: req.params.city , restaurant: req.restaurant});
+  res.render('restaurant', { title: req.params.city, restaurant: req.restaurant });
 });
 
 router.get('/:city/weather', (req, res) => {
@@ -28,7 +28,7 @@ router.get('/:city/traduction', (req, res) => {
   res.render('traduction', { title: req.params.city });
 });
 
-router.get('/:city/activity', infoTrip.attraction, (req, res) => {
+router.get('/:city/activity', infoTrip.activity, (req, res) => {
   res.render('activity', { title: req.params.city });
 });
 
