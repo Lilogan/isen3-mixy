@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
+  margin:10px;
   height: 100vh;
 }
 
@@ -69,7 +69,6 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  filter: blur(2px);
   z-index: -1;
 }
 
@@ -79,6 +78,7 @@ body {
 
 #weather::before {
   background: url('https://www.coeurdebastides.com/img/meteo/hd/partly-cloudy.png') center/cover;
+  background-color: gray;
 }
 
 #flight {
@@ -92,14 +92,29 @@ body {
 
 #info {
   grid-area: info;
+  color: black;
+
+  background-image: url('https://www.jobboom.com/carriere/wp-content/uploads/2014/08/checklist.jpg');
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left 140px bottom;
 }
+
+#info h1 {
+  text-align: center;
+  margin: inherit;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 
 #hotel {
   grid-area: hotel;
 }
 
 #hotel::before {
-  background: url('https://www.leparisien.fr/resizer/IGDTYf0fH1rq5UGvCsoR_0ADKyw=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/X6JFKYWT7UKRJNVUKS5LNICV74.jpg')
+  background: url('https://www.bestwestern-lapaix-reims.com/media/cache/jadro_resize/rc/OMuvwmvf1584535035/jadroRoot/medias/page-chambre/best-western-premier-hotel-de-la-paix-chambre-tradition-mkb-prod-2-.jpg')
     center/cover;
 }
 
@@ -114,6 +129,13 @@ body {
 
 #activity {
   grid-area: activity;
+  text-align: center;
+
+  background-image: url("https://www.make-my-trip.fr/wp-content/uploads/2016/08/Visiter-une-ville-600x330.jpg");
+  background-color:rgb(233, 224,205);
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
 
 #transport {
@@ -122,4 +144,12 @@ body {
 
 #trad {
   grid-area: trad;
+  color: black;
+
+  background-image: url('https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+
