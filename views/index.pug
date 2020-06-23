@@ -1,5 +1,29 @@
 extends layout
 
+block head
+  link(rel="stylesheet", href="./css/index.css")
+
 block content
-  h1= title
-  p Welcome to #{title}
+  h1=title
+  form(action="/", method="post")
+    h2.title Renseignez vos informations
+    .budget.field
+      label(for="budgetInput") Budget :
+      input#budgetInput(type="number", name="budget" min=100, step=100)
+    .traveler.field
+      label(for="budgetInput") Voyageurs :
+      input#travelerInput(type="number", name="traveler", min=1, max=10)
+    .start.field
+      label(for="startDate") Départ :
+      input#startDate(type="date", name="startDate")
+    .end.field
+      label(for="endDate") Retour :
+      input#endDate(type="date", name="endDate")
+
+    input.submit(type="submit", value="Valider")
+
+
+
+
+
+

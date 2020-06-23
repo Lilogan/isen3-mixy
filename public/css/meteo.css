@@ -1,0 +1,16 @@
+.meteo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border:1px solid white;
+    border-radius: 20px;
+
+    margin-bottom:10px;
+
+    color: black;
+    background-color: white;
+}
+
+.meteo .ville{
+    text-align: center;
+    color : black;
+}

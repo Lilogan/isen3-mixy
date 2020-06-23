@@ -1,0 +1,57 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="../css/test.css")
+
+block content
+  form(action="../new", method="get").back
+    input(type="submit", value="Nouvelle recherche")
+  h1 Votre voyage : #{title} pour #{data.passenger} personnes
+  section.grid
+
+    .card#weather.clickable
+      h2 #{title}
+      
+
+
+    .card#info
+      h1 Ne pas oublier
+      .check
+        .visa
+          input(type="checkbox" id="visa" name="visa")
+          label(for="visa")    Visa
+
+        .monnaie
+          input(type="checkbox" id="monnaie" name="monnaie")
+          label(for="monnaie")    Monnaie locale
+
+        .vaccin
+          input(type="checkbox" id="vaccin" name="vaccin")
+          label(for="vaccin")    Vaccin
+
+    .card#flight.clickable
+      h2 Vol
+      h3 Prix moyen : #{data.flight.averagePrice}€
+      p Il y a #{data.flight.quantity} vols correspondand à la destination
+
+    .card#activity.clickable
+      h2 Activitées disponibles sur place
+
+    .card#restaurant.clickable
+      h2 Les restaurants
+      p Il y a 10 restaurants disponibles
+
+    .card#hotel.clickable
+      h2 Les hôtels
+      h3 Le prix moyen : #{data.hotel.averagePrice}€
+      p Il y a #{data.hotel.quantity} hotels disponibles
+
+    .card#trad.clickable
+      h1 Phrases type
+      p Bonjour : "Hello"
+      p Merci : "Thank you"
+      p Derien : "Your welcome"
+
+    script(src="./js/widget.js")
+
+

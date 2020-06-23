@@ -1,0 +1,34 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="../css/flight.css")
+
+block content
+    h1 Les vols concernant votre destination :
+    .vols
+      each flight in flights
+        .vol
+          .date
+            p Du #{flight.outbound.date} au #{flight.inbound.date}
+          .compagnie
+            p=flight.outbound.carrier
+          .depart
+            h1=flight.outbound.origin.city
+            p=flight.outbound.origin.iata
+          .tempsvol
+            img(src="../img/tempsvol.png", alt="temps de vol")
+          .arrive
+            h1=flight.outbound.destination.city
+            p=flight.outbound.destination.iata
+          .prix
+            h1 #{flight.price}€
+          .compagnie
+            p=flight.inbound.carrier
+          .depart
+            h1=flight.inbound.origin.city
+            p=flight.inbound.origin.iata
+          .tempsvol
+            img(src="../img/tempsvol.png", alt="temps de vol")
+          .arrive
+            h1=flight.inbound.destination.city
+            p=flight.inbound.destination.iata

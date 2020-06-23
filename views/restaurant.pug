@@ -1,0 +1,29 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="../css/restaurant.css")
+
+block content
+    h1 Restaurants à #{title} :
+    .restaurants
+      each restaurant in restaurants
+        .resto
+          .nom
+            h1=restaurant.name
+          .rating
+            h1 Note des clients :
+            .stars
+              -for (var note = 0; note < 5; note++)
+                if restaurant.rating > note
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+          .adresse
+            h1 #{restaurant.category}
+            p #{restaurant.address.street} <br> #{restaurant.address.city}
+          .prix
+            p Prix moyen : #{restaurant.price}
+          img(src=restaurant.img.url, alt=restaurant.name).image
+
+
+

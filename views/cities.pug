@@ -1,0 +1,19 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="../css/cities.css")
+
+block content
+  h1 Veuillez choisir une destination :
+    each destination in data.destinations
+      .destination.clicker(id=destination.name)
+        .nom
+          h1 #{destination.name}
+        .prix
+          p Prix moyen du voyage : #{destination.averagePrice}
+        .tempsvol
+          p • Nombre de personnes : #{data.passenger}
+        .weather
+          p • La note météo : #{destination.weather.note}
+
+      script(src="./js/widget.js")

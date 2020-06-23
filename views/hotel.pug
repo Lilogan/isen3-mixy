@@ -1,0 +1,65 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="../css/hotel.css")
+
+block content
+    h1 La liste des Hôtels disponibles à #{title} :
+
+    each hotel in hotels
+        .hotel
+          .name
+            h1 #{hotel.name}
+          .emplacement
+            p  #{hotel.address.street} <br> #{hotel.address.city}
+          .classe
+            .stars
+                if hotel.hotelClass >0
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+                if hotel.hotelClass >1
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+                if hotel.hotelClass >2
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+                if hotel.hotelClass >3
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+                if hotel.hotelClass >4
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+
+          .prix
+            p #{hotel.price}
+          .rating
+            h1 Note des clients :
+            .stars
+                if hotel.rating >0
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+                if hotel.rating >1
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+                if hotel.rating >2
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+                if hotel.rating >3
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+                if hotel.rating >4
+                  .etoile.gold ☆
+                else
+                  .etoile ☆
+
+
+

@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+body {
+  background-color: rgb(30, 44, 62);
+  color: #fff;
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.back {
+  position: absolute;
+  float: left;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: none;
+}
+
+.grid {
+  width: 95%;
+  height: 100%;
+  display: grid;
+  gap: 1rem;
+
+  grid-template-areas:
+    'weather flight info'
+    'activity hotel trad'
+    'activity restaurant trad';
+
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(200px, 1fr);
+}
+
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-areas:
+      'weather info'
+      'flight flight'
+      'hotel hotel'
+      'activity activity'
+      'activity activity'
+      'restaurant restaurant'
+      'trad trad'
+      'trad trad';
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#weather {
+  grid-area: weather;
+}
+
+#weather::before {
+  background: url('https://www.coeurdebastides.com/img/meteo/hd/partly-cloudy.png') center/cover;
+  background-color: gray;
+}
+
+#flight {
+  grid-area: flight;
+}
+
+#flight::before {
+  background: url('https://www.belambra.fr/les-echappees/wp-inside/uploads/2013/01/comment-bien-voyager-en-avion-suivez-nos-conseils-pour-un-vol-agreable.jpg')
+    center/cover;
+}
+
+#info {
+  grid-area: info;
+  color: black;
+
+  background-image: url('https://www.jobboom.com/carriere/wp-content/uploads/2014/08/checklist.jpg');
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left 140px bottom;
+}
+
+#info h1 {
+  text-align: center;
+  margin: inherit;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#hotel {
+  grid-area: hotel;
+}
+
+#hotel::before {
+  background: url('https://www.bestwestern-lapaix-reims.com/media/cache/jadro_resize/rc/OMuvwmvf1584535035/jadroRoot/medias/page-chambre/best-western-premier-hotel-de-la-paix-chambre-tradition-mkb-prod-2-.jpg')
+    center/cover;
+}
+
+#restaurant {
+  grid-area: restaurant;
+}
+
+#restaurant::before {
+  background: url('https://designmag.fr/wp-content/uploads/2018/09/restaurant-en-pleine-nature-bangkok-plafond-sombre-lumiere-led-comme-lucioles.jpg%27')
+    center/cover;
+}
+
+#activity {
+  grid-area: activity;
+  text-align: center;
+
+  background-image: url('https://www.make-my-trip.fr/wp-content/uploads/2016/08/Visiter-une-ville-600x330.jpg');
+  background-color: rgb(233, 224, 205);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#trad {
+  grid-area: trad;
+
+  background-image: url('https://fr.science-questions.org/questions_de_science/152/Pourquoi_le_ciel_est-il_bleu_/pics_o/Ciel_bleu.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
