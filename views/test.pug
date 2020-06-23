@@ -4,7 +4,9 @@ block head
   link(rel="stylesheet", href="../css/test.css")
 
 block content
-  h1 Votre voyage : #{data.name} pour #{data.passenger} personnes
+  form(action="../new", method="get").back
+    input(type="submit", value="Nouvelle recherche")
+  h1 Votre voyage : #{title} pour #{data.passenger} personnes
   section.grid
 
     .card#weather.clickable

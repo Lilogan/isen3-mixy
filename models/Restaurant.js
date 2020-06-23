@@ -4,7 +4,7 @@ const RestaurantsSchema = mongoose.Schema({
     name : String,
     address: {
         country: String,
-        postcode: Number,
+        postcode: String,
         state: String,
         city: String,
         street: String,

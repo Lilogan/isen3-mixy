@@ -8,12 +8,14 @@ const FlightSchema = mongoose.Schema({
   outbound: {
     origin: { iata: String, city: String, name: String },
     date: String,
+    time: String,
     destination: { iata: String, city: String, name: String },
     carrier: String,
   },
   inbound: {
     origin: { iata: String, city: String, name: String },
     data: String,
+    time: String,
     destination: { iata: String, city: String, name: String },
     carrier: String,
   },

@@ -4,11 +4,20 @@ body {
   background-color: rgb(30, 44, 62);
   color: #fff;
   font-family: 'Noto Sans', sans-serif;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin:10px;
+  margin: 0;
   height: 100vh;
+}
+
+.back {
+  position: absolute;
+  float: left;
+  top: 0;
+  left: 0;
+  margin: 1rem;
 }
 
 .card {
@@ -108,7 +117,6 @@ body {
   padding-bottom: 10px;
 }
 
-
 #hotel {
   grid-area: hotel;
 }
@@ -131,13 +139,11 @@ body {
   grid-area: activity;
   text-align: center;
 
-  background-image: url("https://www.make-my-trip.fr/wp-content/uploads/2016/08/Visiter-une-ville-600x330.jpg");
-  background-color:rgb(233, 224,205);
+  background-image: url('https://www.make-my-trip.fr/wp-content/uploads/2016/08/Visiter-une-ville-600x330.jpg');
+  background-color: rgb(233, 224, 205);
   background-position: center;
   background-repeat: no-repeat;
-
 }
-
 
 #trad {
   grid-area: trad;
@@ -147,5 +153,3 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-
-

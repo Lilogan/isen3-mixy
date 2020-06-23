@@ -6,7 +6,7 @@ const HotelsSchema = mongoose.Schema({
   position: { latitude: Number, longitude: Number },
   address: {
     country: String,
-    postcode: Number,
+    postcode: String,
     state: String,
     city: String,
     street: String,

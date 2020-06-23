@@ -17,6 +17,7 @@ async function restaurant(req, res, next) {
 
 async function flight(req, res, next) {
   req.flights = await tripData.getFlightsByCity(req.params.city, req.session.data.startDate, req.session.data.endDate);
+  next();
 }
 
 module.exports = { activity, hotel, restaurant, flight };

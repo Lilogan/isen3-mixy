@@ -6,7 +6,7 @@ const test = require('../utils/test');
 /* GET home page */
 router.get('/', filter, (req, res) => {
   if (!req.session.data) res.render('index', { title: 'Mixy' });
-  else res.render('cities', { title: 'Destinations', data: test.forList });
+  else res.render('cities', { title: 'Destinations', data: req.cities });
 });
 
 /* POST home page */
@@ -23,7 +23,18 @@ router.post(
   },
   filter,
   (req, res) => {
-    res.render('cities', { title: 'Destinations' });
+    res.render('cities', { title: 'Destinations', data: req.cities });
+  }
+);
+
+router.get(
+  '/new',
+  (req, res, next) => {
+    req.session = null;
+    next();
+  },
+  (req, res) => {
+    res.render('index', { title: 'Mixy' });
   }
 );
 

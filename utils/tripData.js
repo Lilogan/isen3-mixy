@@ -12,8 +12,7 @@ async function getCity(cityName) {
   const city = await City.findOne({ name: cityName });
   if (city == null) {
     const data = await getCityOverApi(cityName);
-    console.log(data);
-    await City.insertMany([data]);
+    if (data) await City.insertMany(data);
     return data;
   }
   return city;
@@ -78,7 +77,7 @@ async function getActivitiesOverApi(locationId) {
     .get('https://tripadvisor1.p.rapidapi.com/attractions/list', {
       headers: {
         'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
-        'x-rapidapi-key': '307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92',
+        'x-rapidapi-key': process.env.RAPIDAPI_KEY,
         useQueryString: true,
       },
       params: {
@@ -138,7 +137,7 @@ async function getHotelsOverApi(locationId, nbPerson, start, duration) {
     .get('https://tripadvisor1.p.rapidapi.com/hotels/get-details', {
       headers: {
         'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
-        'x-rapidapi-key': '307df49993mshb8f8238ecb37fcfp197e8cjsnb3c133854c92',
+        'x-rapidapi-key': process.env.RAPIDAPI_KEY,
         useQueryString: true,
       },
       params: {
@@ -147,6 +146,7 @@ async function getHotelsOverApi(locationId, nbPerson, start, duration) {
         rooms: Math.round(nbPerson / 2),
         checkin: start,
         nights: duration,
+        limit: '10',
         lang: 'fr_FR',
         currency: 'EUR',
       },
@@ -206,8 +206,8 @@ async function getRestaurantsOverApi(locationId) {
       },
       params: {
         lunit: 'km',
-        limit: '5',
-        offset: 20,
+        limit: '10',
+        offset: 0,
         currency: 'EUR',
         lang: 'fr_FR',
         location_id: locationId,
@@ -254,21 +254,22 @@ async function getFlightsByCity(cityName, outboundDate, inboundDate) {
   });
   if (flights.length == 0) {
     const city = await getCity(cityName);
-    const data = await getFlightsByCountry(FR, city.country, outboundDate, inboundDate);
+    const data = await getFlightsByCountry(city.country, outboundDate, inboundDate);
     await Flight.insertMany(data);
+    return data.filter((data) => data.outbound.destination.city == cityName);
   }
   return flights;
 }
 
-async function getFlightsByCountry(country, outboundDate, inboundDate) {
+async function getFlightsByCountry(countryName, outboundDate, inboundDate) {
   const flights = await Flight.find({
-    destinationCountry: country,
+    destinationCountry: countryName,
     'outbound.data': outboundDate,
     'inbound.date': inboundDate,
   });
   if (flights.length == 0) {
-    const country = await Country.findOne({ name: country });
-    const data = await getFlightsOverApi(FR, country.id, outboundDate, inboundDate);
+    const country = await Country.findOne({ name: countryName });
+    const data = await getFlightsOverApi('FR', country.id, outboundDate, inboundDate);
     await Flight.insertMany(data);
     return data;
   }
@@ -296,55 +297,61 @@ async function getFlightsOverApi(originId, destinationId, outboundDate, inboundD
     )
     .then((res) => {
       let flights = new Array();
-      for (const route of res.Routes) {
-        const quote = res.Quotes.filter((quote) => quote.QuoteId == route.QuoteIds[0]);
+      for (const route of res.data.Routes) {
+        if (Object.keys(route).length > 2) {
+          const quote = res.data.Quotes.find((quote) => quote.QuoteId == route.QuoteIds[0]);
+          const outOriginPlace = res.data.Places.find((place) => place.PlaceId == quote.OutboundLeg.OriginId);
+          const inOriginPlace = res.data.Places.find((place) => place.PlaceId == quote.InboundLeg.OriginId);
+          const outDestinationPlace = res.data.Places.find((place) => place.PlaceId == quote.OutboundLeg.DestinationId);
+          const inDestinationPlace = res.data.Places.find((place) => place.PlaceId == quote.InboundLeg.DestinationId);
 
-        const outOriginPlace = res.Places.filter((place) => place.PlaceId == quote.OutboundLeg.OriginId);
-        const inOriginPlace = res.Places.filter((place) => place.PlaceId == quote.InboundLeg.OriginId);
-        const outDestinationPlace = res.Places.filter((place) => place.PlaceId == quote.OutboundLeg.DestinationId);
-        const inDestinationPlace = res.Places.filter((place) => place.PlaceId == quote.OutboundLeg.DestinationId);
+          const outDate = new Date(quote.OutboundLeg.DepartureDate);
+          const inDate = new Date(quote.InboundLeg.DepartureDate);
 
-        const flight = {
-          originCountry: outOriginPlace.CountryName,
-          destinationCountry: outDestinationPlace.CountryName,
-          price: route.Prices,
-          direct: quote.Direct,
-          outbound: {
-            origin: {
-              iata: outOriginPlace.IataCode,
-              city: outOriginPlace.CityId,
-              name: outOriginPlace.Name,
+          const flight = {
+            originCountry: outOriginPlace.CountryName,
+            destinationCountry: outDestinationPlace.CountryName,
+            price: route.Price,
+            direct: quote.Direct,
+            outbound: {
+              origin: {
+                iata: outOriginPlace.IataCode,
+                city: outOriginPlace.CityName,
+                name: outOriginPlace.Name,
+              },
+              destination: {
+                iata: outDestinationPlace.IataCode,
+                city: outDestinationPlace.CityName,
+                name: outDestinationPlace.Name,
+              },
+              date: outboundDate,
+              carrier: res.data.Carriers.find((carrier) => carrier.CarriersId == quote.OutboundLeg.CarriersId).Name,
             },
-            destination: {
-              iata: outDestinationPlace.IataCode,
-              city: outDestinationPlace.CityId,
-              name: outDestinationPlace.Name,
+            inbound: {
+              origin: {
+                iata: inOriginPlace.IataCode,
+                city: inOriginPlace.CityName,
+                name: inOriginPlace.Name,
+              },
+              destination: {
+                iata: inDestinationPlace.IataCode,
+                city: inDestinationPlace.CityName,
+                name: inDestinationPlace.Name,
+              },
+              date: inboundDate,
+              carrier: res.data.Carriers.find((carrier) => carrier.CarriersId == quote.InboundLeg.CarriersId).Name,
             },
-            date: new Date(quote.OutboundLeg.DepartureDate).getDate(),
-            carrier: res.Carriers.filter((carrier) => carrier.CarriersId == quote.OutboundLeg.CarriersId),
-          },
-          inbound: {
-            origin: {
-              iata: inOriginPlace.IataCode,
-              city: inOriginPlace.CityId,
-              name: inOriginPlace.Name,
-            },
-            destination: {
-              iata: inDestinationPlace.IataCode,
-              city: inDestinationPlace.CityId,
-              name: inDestinationPlace.Name,
-            },
-            date: new Date(quote.InboundLeg.DepartureDate).getDate(),
-            carrier: res.Carriers.filter((carrier) => carrier.CarriersId == quote.InboundLeg.CarriersId),
-          },
-        };
-        flights.push(flight);
+          };
+          flights.push(flight);
+        }
       }
       return flights;
     })
     .catch((error) => {
       console.error(error);
     });
+
+  return data;
 }
 
 module.exports = { getCity, getActivities, getHotels, getRestaurants, getFlightsByCountry, getFlightsByCity };

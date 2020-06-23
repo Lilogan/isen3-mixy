@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const infoTrip = require('../middleware/infoTrip');
+const tripSummary = require('../middleware/tripSummary');
 const test = require('../utils/test');
 /* GET city page */
 
-router.get('/:city', (req, res) => {
-  res.render('test', { title: req.params.city, data: test.forTrip });
+router.get('/:city', tripSummary, (req, res) => {
+  res.render('test', { title: req.params.city, data: req.trip });
 });
 
 router.get('/:city/flight', infoTrip.flight, (req, res) => {

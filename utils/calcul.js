@@ -15,4 +15,22 @@ function getDistanceByCoords(coords1, coords2) {
   );
 }
 
-module.exports = getDistanceByCoords;
+function arrayAverage(array) {
+  const a = array.length;
+  let b = 0;
+  for (let i = 0; i < a; i++) {
+    b += Number(array[i]);
+  }
+  return b / a;
+}
+
+function priceAverage(array) {
+  const a = array.length;
+  let b = 0;
+  for (let i = 0; i < a; i++) {
+    b += Number(array[i].price);
+  }
+  return b / a;
+}
+
+module.exports = { getDistanceByCoords, arrayAverage, priceAverage };
